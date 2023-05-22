@@ -21,7 +21,13 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        // Get raw axes so we do not have floaty acceleration.
+        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+        // Account for diagonal movement speed.
+        if (input.x != 0 && input.y != 0)
+            input *= 0.7071f;
+        
         Vector3 movement = transform.forward * input.y + transform.right * input.x;
         cc.Move(movement * speed * Time.deltaTime);
     }
