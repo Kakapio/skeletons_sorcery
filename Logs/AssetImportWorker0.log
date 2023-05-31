@@ -1,0 +1,857 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.25f1 (68ef2c4f8861) revision 6876972'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'en' Physical Memory: 32537 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.25f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/CS3540/ss_copy/skeletonsandsorcery_working
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+51518
+Successfully changed project path to: C:/CS3540/ss_copy/skeletonsandsorcery_working
+C:/CS3540/ss_copy/skeletonsandsorcery_working
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [9472] Host "[IP] 192.168.1.237 [Port] 0 [Flags] 2 [Guid] 3610572265 [EditorId] 3610572265 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-9L1RHBS) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [9472] Host "[IP] 192.168.1.237 [Port] 0 [Flags] 2 [Guid] 3610572265 [EditorId] 3610572265 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-9L1RHBS) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+Refreshing native plugins compatible for Editor in 149.11 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.25f1 (68ef2c4f8861)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.25f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/CS3540/ss_copy/skeletonsandsorcery_working/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 4070 Ti (ID=0x2782)
+    Vendor:   NVIDIA
+    VRAM:     12010 MB
+    Driver:   31.0.15.2824
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.25f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.25f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.25f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56452
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.25f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.25f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.008655 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 144.09 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.703 seconds
+Domain Reload Profiling:
+	ReloadAssembly (704ms)
+		BeginReloadAssembly (82ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (520ms)
+			LoadAssemblies (80ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (99ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (28ms)
+			SetupLoadedEditorAssemblies (339ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (144ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (138ms)
+				ProcessInitializeOnLoadMethodAttributes (46ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.009757 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\CS3540\ss_copy\skeletonsandsorcery_working\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory doesn't match image C:\CS3540\ss_copy\skeletonsandsorcery_working\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 141.45 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.575 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1575ms)
+		BeginReloadAssembly (98ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (20ms)
+		EndReloadAssembly (1365ms)
+			LoadAssemblies (97ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (325ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (77ms)
+			SetupLoadedEditorAssemblies (803ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (142ms)
+				BeforeProcessingInitializeOnLoad (149ms)
+				ProcessInitializeOnLoadAttributes (329ms)
+				ProcessInitializeOnLoadMethodAttributes (166ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 1.89 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 6602 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 83 unused Assets / (0.5 MB). Loaded Objects now: 7049.
+Memory consumption went from 266.2 MB to 265.7 MB.
+Total: 7.396100 ms (FindLiveObjects: 0.510800 ms CreateObjectMapping: 0.186900 ms MarkObjects: 6.346900 ms  DeleteObjects: 0.350400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 16997.568922 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Animations/StarterAssetsThirdPerson.controller
+  artifactKey: Guid(40db3173a05ae3242b1c182a09b0a183) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Animations/StarterAssetsThirdPerson.controller using Guid(40db3173a05ae3242b1c182a09b0a183) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b456e9bcbf156ad5a2b12ed9cd44f4ee') in 0.053597 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Animations/Locomotion--Walk_N_Land.anim.fbx
+  artifactKey: Guid(325a26d62b61fa94cb3c97c435efebc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Animations/Locomotion--Walk_N_Land.anim.fbx using Guid(325a26d62b61fa94cb3c97c435efebc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c19e7ee09e2d4c1eb042c9d97c265053') in 0.049369 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.005950 seconds.
+  path: Assets/ExternalAssets/Ultimate SFX Bundle/Magic Sounds Pro/Fire Bolts/Fire bolt 1.wav
+  artifactKey: Guid(b0c2d442ba6c1164f8cce5f73fd42fac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/Ultimate SFX Bundle/Magic Sounds Pro/Fire Bolts/Fire bolt 1.wav using Guid(b0c2d442ba6c1164f8cce5f73fd42fac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82bd9a19410f09a204b4aad7551d8975') in 0.089198 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Materials/RockMaterial.mat
+  artifactKey: Guid(bbc11e9996ef7a045bb4f857d6e2da84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/RockMaterial.mat using Guid(bbc11e9996ef7a045bb4f857d6e2da84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2e3739645ec62e33b2b7558f2832dcd') in 0.034324 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Materials/StairMaterial.mat
+  artifactKey: Guid(22f81ee0e8cbe3f46900da14e4b734b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/StairMaterial.mat using Guid(22f81ee0e8cbe3f46900da14e4b734b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aaea5f3b61bc4f32518fcc32e67f431b') in 0.009950 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Scripts/EnemyBehavior.cs
+  artifactKey: Guid(4f229910518e2944fad271734dcc6f17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/EnemyBehavior.cs using Guid(4f229910518e2944fad271734dcc6f17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98ac91e8dc3d17c68a9f47a0e0279731') in 0.010963 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Prefabs/LevelBlocks/BasicSpawn.prefab
+  artifactKey: Guid(5b6292bab243e674caf2e8e9a39d1d18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/LevelBlocks/BasicSpawn.prefab using Guid(5b6292bab243e674caf2e8e9a39d1d18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '418fffdf614621af563442ca4a777a3e') in 0.021868 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Prefabs/LevelBlocks/BasicWall.prefab
+  artifactKey: Guid(03d68abb2713a594b9495db28a47b2fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/LevelBlocks/BasicWall.prefab using Guid(03d68abb2713a594b9495db28a47b2fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77b7262018832997bf9353c27c270c9d') in 0.009346 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/ExternalAssets/StarterAssets/TutorialInfo/Scripts/Readme.cs
+  artifactKey: Guid(fcf7219bab7fe46a1ad266029b2fee19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/TutorialInfo/Scripts/Readme.cs using Guid(fcf7219bab7fe46a1ad266029b2fee19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81f13946a3915c039b9cceb61677b7f4') in 0.004466 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Scripts/ChestBehavior.cs
+  artifactKey: Guid(f49d051aad0de7c418f3e84066fb7826) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ChestBehavior.cs using Guid(f49d051aad0de7c418f3e84066fb7826) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94a48c9f55a07ea0b0941f007b12bd49') in 0.004216 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Prefabs/LevelBlocks/BasicTunnel.prefab
+  artifactKey: Guid(5e04ef7a02ea54f4698b6df834a90f0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/LevelBlocks/BasicTunnel.prefab using Guid(5e04ef7a02ea54f4698b6df834a90f0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c162841ffc6e760671d2eb0288b4576') in 0.013110 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/ExternalAssets/SimpleFantasy/Materials/SF_Character_Bard.mat
+  artifactKey: Guid(db67a730d0164924ba669014f2f08d73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SimpleFantasy/Materials/SF_Character_Bard.mat using Guid(db67a730d0164924ba669014f2f08d73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eabd324e1de799a31eaa08bc588820c1') in 0.010074 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/ExternalAssets/SimpleFantasy/Prefabs/Props/SF_Prop_Goblin_Chest_01.prefab
+  artifactKey: Guid(4841e94700c105c4f8f219f157c93d70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SimpleFantasy/Prefabs/Props/SF_Prop_Goblin_Chest_01.prefab using Guid(4841e94700c105c4f8f219f157c93d70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c90b5f749f2b9344c4d57cfc1d90f186') in 0.010383 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Textures/Armature_Arms_MetallicSmoothness.tif
+  artifactKey: Guid(b41d630ccc344454bb1f27587f9acd70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Textures/Armature_Arms_MetallicSmoothness.tif using Guid(b41d630ccc344454bb1f27587f9acd70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c13a274114366d45b190ae4063c5f0ad') in 0.037675 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Materials/M_Armature_Legs.mat
+  artifactKey: Guid(8b25e99361ac31d4e9ae83c46aee69ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Materials/M_Armature_Legs.mat using Guid(8b25e99361ac31d4e9ae83c46aee69ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c98664f0f3134e08a8ebf5f70a36e65') in 0.036181 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Scripts/ShootProjectile.cs
+  artifactKey: Guid(d6d9657effdceb6498a4c1995b3badaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ShootProjectile.cs using Guid(d6d9657effdceb6498a4c1995b3badaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec5a9ac5543fdce7f003f9320d3e45ef') in 0.004520 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Textures/Armature_Body_AlbedoTransparency.tif
+  artifactKey: Guid(28d78c5517421f047b88352f3b18e8e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Textures/Armature_Body_AlbedoTransparency.tif using Guid(28d78c5517421f047b88352f3b18e8e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9f1b439500d2f414f92823481baa3fa') in 0.010551 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/ExternalAssets/SimpleFantasy/Textures/Medieval_Texture.png
+  artifactKey: Guid(cf19d52271177d0428e56c9b5bca279a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SimpleFantasy/Textures/Medieval_Texture.png using Guid(cf19d52271177d0428e56c9b5bca279a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42d46f4c9fc5f5dba41a57182ca8eaed') in 0.016533 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.002004 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_03.wav
+  artifactKey: Guid(186de84b3207156479abe98f4958fed0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_03.wav using Guid(186de84b3207156479abe98f4958fed0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '591a4f07b576d8f2385a31aa90e5e1d9') in 0.008537 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/ExternalAssets/SimpleFantasy/Models/Prefabbed/SF_Prop_Archway_01.fbx
+  artifactKey: Guid(64c71b793d5f9aa4bb51e8b78dd63f0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SimpleFantasy/Models/Prefabbed/SF_Prop_Archway_01.fbx using Guid(64c71b793d5f9aa4bb51e8b78dd63f0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5c5490fda20bf0bb79c6824146449fa') in 0.024075 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/ExternalAssets/StarterAssets/Mobile/Scripts/CanvasInputs/UICanvasControllerInput.cs
+  artifactKey: Guid(4a300d010f57451488aa99000126fbd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/Mobile/Scripts/CanvasInputs/UICanvasControllerInput.cs using Guid(4a300d010f57451488aa99000126fbd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '796ceffa95cc2d19c24772de5e5b03c5') in 0.004211 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/ExternalAssets/StarterAssets/Mobile/UI/UI_Icon_Look.png
+  artifactKey: Guid(af0ae2dbf3d1efb4f82af377950704a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/Mobile/UI/UI_Icon_Look.png using Guid(af0ae2dbf3d1efb4f82af377950704a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bf1a0e20c29e02a4a3c0bd1572313a3') in 0.075783 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/ExternalAssets/SimpleFantasy/Prefabs/Props/SF_Prop_Archway_01.prefab
+  artifactKey: Guid(b57d9ac0df33e5e4e99617617b1a3c31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SimpleFantasy/Prefabs/Props/SF_Prop_Archway_01.prefab using Guid(b57d9ac0df33e5e4e99617617b1a3c31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f3ef83dc2100eddb0a633aa6a279ef2') in 0.009460 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/ExternalAssets/Ultimate SFX Bundle/Magic Sounds Pro/Fire Bolts/Fire bolt 10.wav
+  artifactKey: Guid(a424be6131e41344bacd1f0a267d26fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/Ultimate SFX Bundle/Magic Sounds Pro/Fire Bolts/Fire bolt 10.wav using Guid(a424be6131e41344bacd1f0a267d26fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b0486326c50591dc1daffad69780b2a') in 0.008419 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Animations/Locomotion--Run_N.anim.fbx
+  artifactKey: Guid(16114d403eabb53438de032c6f0d1deb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Animations/Locomotion--Run_N.anim.fbx using Guid(16114d403eabb53438de032c6f0d1deb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '646fd69632d781e9723af35a097865e2') in 0.008675 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/ExternalAssets/SimpleFantasy/Prefabs/Props/SF_Prop_Barrel_Coal_01.prefab
+  artifactKey: Guid(1f82c73cb98663b4c8cbdf680c3fbee3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SimpleFantasy/Prefabs/Props/SF_Prop_Barrel_Coal_01.prefab using Guid(1f82c73cb98663b4c8cbdf680c3fbee3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7786434236424efb6c3a1b88009a6bd0') in 0.010044 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Animations/Locomotion--Walk_N.anim.fbx
+  artifactKey: Guid(8269a9f8cf495034c817722ac21f309f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Animations/Locomotion--Walk_N.anim.fbx using Guid(8269a9f8cf495034c817722ac21f309f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21bf03eb3db2807127860e570aaf66db') in 0.008137 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Fantasy Skybox FREE/Cubemaps/FS013/Images/FS013_Day_Cubemap_up.png
+  artifactKey: Guid(d6448ae109ff2624191009c1720325a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantasy Skybox FREE/Cubemaps/FS013/Images/FS013_Day_Cubemap_up.png using Guid(d6448ae109ff2624191009c1720325a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79b910f62a269e4f7074fac2281b43e4') in 0.009317 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.002915 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Textures/Armature_Body_Normal.tif
+  artifactKey: Guid(2a3daea46c599324e873f935ab08000a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Textures/Armature_Body_Normal.tif using Guid(2a3daea46c599324e873f935ab08000a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34dbb80bd0d5de8b7acb3cd109630b9b') in 0.015926 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Prefabs/Fireball.prefab
+  artifactKey: Guid(5792ff608e9659242965be2c85e0c7ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Fireball.prefab using Guid(5792ff608e9659242965be2c85e0c7ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a26f7255cb7285452cadc4a7fb4f639') in 0.010611 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_09.wav
+  artifactKey: Guid(274649b0e221539409070ebf6c18918b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_09.wav using Guid(274649b0e221539409070ebf6c18918b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7c4af390fc8f69a36b56a075330c156') in 0.008078 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/ExternalAssets/SimpleFantasy/Models/Characters/_Animations/Mask_Head.mask
+  artifactKey: Guid(f4bf3f6dc42479e47b1fd0e457094fb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SimpleFantasy/Models/Characters/_Animations/Mask_Head.mask using Guid(f4bf3f6dc42479e47b1fd0e457094fb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46ec0f7666ecbcae0bf0a4fa84edff31') in 0.006086 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Scripts/PortalBehavior.cs
+  artifactKey: Guid(5104e5fdedf6f03438938e9c4b55682c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PortalBehavior.cs using Guid(5104e5fdedf6f03438938e9c4b55682c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f64e2f10728952f86dd0ef6cacbf405') in 0.004755 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/ExternalAssets/SimpleFantasy/Prefabs/Environment/SF_Env_Elven_Redtree_01.prefab
+  artifactKey: Guid(3c86471d3d756e54dbcd76232b9f36ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SimpleFantasy/Prefabs/Environment/SF_Env_Elven_Redtree_01.prefab using Guid(3c86471d3d756e54dbcd76232b9f36ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b5eb8cff8175424214e5f9d4167a5eb') in 0.010512 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001254 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Textures/Armature_Arms_Normal.tif
+  artifactKey: Guid(104a45460231b8d4783e0bb2223be28c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Textures/Armature_Arms_Normal.tif using Guid(104a45460231b8d4783e0bb2223be28c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'adc6229d06033fc2bb8f435658fbccff') in 0.012839 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/ExternalAssets/SimpleFantasy/Textures/Bard.png
+  artifactKey: Guid(07587d6a84cb6bc42868f4107c6b164e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SimpleFantasy/Textures/Bard.png using Guid(07587d6a84cb6bc42868f4107c6b164e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dea6059a3e8c0af86097c8d982572db5') in 0.008901 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Animations/Jump--Jump.anim.fbx
+  artifactKey: Guid(98f277b0c8055e143b2fcf058d3c27dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Animations/Jump--Jump.anim.fbx using Guid(98f277b0c8055e143b2fcf058d3c27dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b121955b7efd705632575ba82cb57a7e') in 0.008664 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/ExternalAssets/SimpleFantasy/Models/Prefabbed/SF_Env_Elven_Redtree_01.fbx
+  artifactKey: Guid(371d0d9adee806548a7b6e723ae20004) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SimpleFantasy/Models/Prefabbed/SF_Env_Elven_Redtree_01.fbx using Guid(371d0d9adee806548a7b6e723ae20004) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98f3f593c1cbb2821ed680164b174deb') in 0.010484 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Materials/FloorMaterial.mat
+  artifactKey: Guid(0e452b18eacb23d4189fbf7273eccc09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/FloorMaterial.mat using Guid(0e452b18eacb23d4189fbf7273eccc09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2bd8f90d63f4bdb39f505d7a6cc0040') in 0.009309 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/ExternalAssets/StarterAssets/Mobile/Scripts/VirtualInputs/UIVirtualButton.cs
+  artifactKey: Guid(448cd6d8e2f2cb04096e777d99974bc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/Mobile/Scripts/VirtualInputs/UIVirtualButton.cs using Guid(448cd6d8e2f2cb04096e777d99974bc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd899046432dfaf20a21d32ec845674c') in 0.004517 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/ExternalAssets/StarterAssets/Mobile/Scripts/Utilities/MobileDisableAutoSwitchControls.cs
+  artifactKey: Guid(901182334643ba1438a25accc6bd0c79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/Mobile/Scripts/Utilities/MobileDisableAutoSwitchControls.cs using Guid(901182334643ba1438a25accc6bd0c79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfd1f4be1ff4e010fac3c1f6a24775a1') in 0.004403 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_02.wav
+  artifactKey: Guid(85016e0f2b01da248b9663dd49a161b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_02.wav using Guid(85016e0f2b01da248b9663dd49a161b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c185983249f43b6d006841ea19cba29') in 0.009922 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/ExternalAssets/SimpleFantasy/Models/Characters/_Animations/Mask_Upper.mask
+  artifactKey: Guid(8f022796fa5205e4483f40dd7b373bb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SimpleFantasy/Models/Characters/_Animations/Mask_Upper.mask using Guid(8f022796fa5205e4483f40dd7b373bb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64c9c0a45862737856812d2381e99dde') in 0.004765 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/ExternalAssets/SimpleFantasy/Prefabs/Props/SF_Prop_Walkway_01.prefab
+  artifactKey: Guid(cdabf0b6d14d47941a4422af45d43f4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SimpleFantasy/Prefabs/Props/SF_Prop_Walkway_01.prefab using Guid(cdabf0b6d14d47941a4422af45d43f4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '743da158b37dc7c142c30614b1927c99') in 0.009976 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_01.wav
+  artifactKey: Guid(72f526a6a9890f643a88e85a61c86c8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_01.wav using Guid(72f526a6a9890f643a88e85a61c86c8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e653759b8de503bac2396447e818ff23') in 0.009741 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001708 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Animations/Stand--Idle.anim.fbx
+  artifactKey: Guid(12e52e465ed793a4d801955e9f964a82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Animations/Stand--Idle.anim.fbx using Guid(12e52e465ed793a4d801955e9f964a82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51c1905ab2ad23ae9a26e98e7f8396f9') in 0.008241 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/ExternalAssets/StarterAssets/InputSystem/StarterAssetsInputs.cs
+  artifactKey: Guid(e087ecce43ebbff45a1b360637807d93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/InputSystem/StarterAssetsInputs.cs using Guid(e087ecce43ebbff45a1b360637807d93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81a61d9f0213355da711c655207dd246') in 0.004146 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_05.wav
+  artifactKey: Guid(14e8a8d2158bec840b56c54f5266e692) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_05.wav using Guid(14e8a8d2158bec840b56c54f5266e692) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37493fb1bc796f980f25f317d1166133') in 0.008171 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Textures/Armature_Arms_AlbedoTransparency.tif
+  artifactKey: Guid(c6dc62700fa06274b9608a9fce8ed21b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Textures/Armature_Arms_AlbedoTransparency.tif using Guid(c6dc62700fa06274b9608a9fce8ed21b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3fa94e557b9f927ea213ac1e6660e079') in 0.010096 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Scripts/ThirdPersonCameraController.cs
+  artifactKey: Guid(30ef8234992488a44a96119b7322c7f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ThirdPersonCameraController.cs using Guid(30ef8234992488a44a96119b7322c7f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db2872d702e20fd242763bb63dd08d5d') in 0.004407 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/ExternalAssets/SimpleFantasy/Materials/Medieval_Material.mat
+  artifactKey: Guid(d726a65f2eaae8847857d20bb327828e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SimpleFantasy/Materials/Medieval_Material.mat using Guid(d726a65f2eaae8847857d20bb327828e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9da2af6f6327907d30cb55e8f151431d') in 0.009978 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/ExternalAssets/SimpleFantasy/Models/Prefabbed/SF_Env_TwistedTree_01.fbx
+  artifactKey: Guid(db2304a6408d9164f915ff9ed4d56950) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SimpleFantasy/Models/Prefabbed/SF_Env_TwistedTree_01.fbx using Guid(db2304a6408d9164f915ff9ed4d56950) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5eb2c633a312acf6cff05be3a90a998a') in 0.011746 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Prefabs/LevelBlocks/BasicStageEnd.prefab
+  artifactKey: Guid(5fa9f618610c7f64b89740f57351d870) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/LevelBlocks/BasicStageEnd.prefab using Guid(5fa9f618610c7f64b89740f57351d870) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31528be1843aba10126c738640ab1aa0') in 0.012746 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/ExternalAssets/SimpleFantasy/Models/Prefabbed/SF_Prop_Torch_01.fbx
+  artifactKey: Guid(973ed58b240a02149984fa9e9c72617d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SimpleFantasy/Models/Prefabbed/SF_Prop_Torch_01.fbx using Guid(973ed58b240a02149984fa9e9c72617d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd673306d0fa55c1bbc132165777dcb82') in 0.012621 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/ExternalAssets/StarterAssets/Mobile/UI/UI_Icon_Move.png
+  artifactKey: Guid(ff7bfa7addf40784d86f62b8e4a034a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/Mobile/UI/UI_Icon_Move.png using Guid(ff7bfa7addf40784d86f62b8e4a034a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75732b852d3ab0ad2081368f3c32bb92') in 0.051563 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_06.wav
+  artifactKey: Guid(29841e7d5bbfb5b419c9ad16ca8bc4c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_06.wav using Guid(29841e7d5bbfb5b419c9ad16ca8bc4c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '515189f04d2c4930dc52b61217cab946') in 0.008471 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/ExternalAssets/SimpleFantasy/Models/Prefabbed/SF_Prop_Goblin_Chest_01.fbx
+  artifactKey: Guid(d472975e3a31e954d8dc9bcb0d3ddba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SimpleFantasy/Models/Prefabbed/SF_Prop_Goblin_Chest_01.fbx using Guid(d472975e3a31e954d8dc9bcb0d3ddba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8af20cb059ed775cd11cf0cdce527b02') in 0.020346 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/ExternalAssets/StarterAssets/Mobile/UI/UI_Circle_Faded.png
+  artifactKey: Guid(90ded0611e490aa4ba6961afbfc2280d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/Mobile/UI/UI_Circle_Faded.png using Guid(90ded0611e490aa4ba6961afbfc2280d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd31b24c1b4059cba25e1f6c20629d1e7') in 0.246511 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Scripts/ThirdPersonController.cs
+  artifactKey: Guid(26e54e5a728a9234ab24fcf1460ed8a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Scripts/ThirdPersonController.cs using Guid(26e54e5a728a9234ab24fcf1460ed8a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e7e1ba5788f3e06a48b0894520ee33b') in 0.004376 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/ExternalAssets/SimpleFantasy/Models/Prefabbed/SF_Prop_Barrel_Coal_01.fbx
+  artifactKey: Guid(a87a4fd5e7509e543a1c7cb9bd24cc5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SimpleFantasy/Models/Prefabbed/SF_Prop_Barrel_Coal_01.fbx using Guid(a87a4fd5e7509e543a1c7cb9bd24cc5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '476a070438ab2e473a96c19cb528c8bb') in 0.010948 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/ExternalAssets/StarterAssets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs
+  artifactKey: Guid(476cc7d7cd9874016adc216baab94a0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs using Guid(476cc7d7cd9874016adc216baab94a0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a485fdf2515f37b420d8e48a14e6930') in 0.004060 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Bitmap/heart.png
+  artifactKey: Guid(a31e77e5c46776e48995f8fdf20a63ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Bitmap/heart.png using Guid(a31e77e5c46776e48995f8fdf20a63ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a62dde49298355c6e13262a4b401ddb2') in 0.024528 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Materials/M_Armature_Body.mat
+  artifactKey: Guid(43714b68324cc2c409d534d9874f2a2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Materials/M_Armature_Body.mat using Guid(43714b68324cc2c409d534d9874f2a2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '902bbb851768f8c1a2d49179c4b4f2d1') in 0.022614 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Textures/Armature_Body_MetallicSmoothness.tif
+  artifactKey: Guid(e73adacd5e8f6fc45a491dbd62e71ead) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Textures/Armature_Body_MetallicSmoothness.tif using Guid(e73adacd5e8f6fc45a491dbd62e71ead) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b67c1af0008b16e85f602671ba8a6e5') in 0.010820 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Fantasy Skybox FREE/Cubemaps/FS013/FS013_Day_Cubemap.mat
+  artifactKey: Guid(20e1111adc6498e499e72f734cde4793) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantasy Skybox FREE/Cubemaps/FS013/FS013_Day_Cubemap.mat using Guid(20e1111adc6498e499e72f734cde4793) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a0b97d4318e53fad3b95ff708e95f18') in 0.013391 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_08.wav
+  artifactKey: Guid(67c8b33e424ccdc4486edf538ab91c5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_08.wav using Guid(67c8b33e424ccdc4486edf538ab91c5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'daa3b67a82f0eb4215e5fab222b8fba9') in 0.008462 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Materials/M_Armature_Arms.mat
+  artifactKey: Guid(766fd3ff04aab4745a764d33daac86fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Materials/M_Armature_Arms.mat using Guid(766fd3ff04aab4745a764d33daac86fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e8004ea56923f29782d5151b964359e') in 0.015417 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001439 seconds.
+  path: Assets/ExternalAssets/ThaleahFat_TTF.ttf
+  artifactKey: Guid(4d1e1d10c03e5a04dbd98fe99c04ddd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/ThaleahFat_TTF.ttf using Guid(4d1e1d10c03e5a04dbd98fe99c04ddd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3464bb4f13aeb6535c0d8fb947a28ae0') in 0.022227 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Prefabs/LevelBlocks/BasicTurn.prefab
+  artifactKey: Guid(a3f3eda10891753458196689ff55a857) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/LevelBlocks/BasicTurn.prefab using Guid(a3f3eda10891753458196689ff55a857) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5774959be29e250274a6caab33d2f2d7') in 0.011555 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_04.wav
+  artifactKey: Guid(1a91fcd19acf1e54bba0945d9f390849) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_04.wav using Guid(1a91fcd19acf1e54bba0945d9f390849) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '084e5963e824e5a71721e46ddb9e2b6e') in 0.008708 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/ExternalAssets/SMC Pack 1/Demo/DemoAssets/V_SMC_Camera.cs
+  artifactKey: Guid(c5831031e8fd5224392c660375fb4d71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SMC Pack 1/Demo/DemoAssets/V_SMC_Camera.cs using Guid(c5831031e8fd5224392c660375fb4d71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4a078a9282798c7f632d149ac8c03e3') in 0.004132 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/ExternalAssets/StarterAssets/Mobile/UI/UI_Circle_Bevel_Base.png
+  artifactKey: Guid(b74c31d447d2f5d41a61081bdf5e7126) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/Mobile/UI/UI_Circle_Bevel_Base.png using Guid(b74c31d447d2f5d41a61081bdf5e7126) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce6ad446b556bc3c8914eef6e66c8d23') in 0.049563 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Textures/Armature_Legs_AlbedoTransparency.tif
+  artifactKey: Guid(c444e3d02d2fcff4d9fe5211d67652a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Textures/Armature_Legs_AlbedoTransparency.tif using Guid(c444e3d02d2fcff4d9fe5211d67652a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba892c13f379ed67e1783f9cab5e9474') in 0.010565 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Scripts/DestroyMagic.cs
+  artifactKey: Guid(22c08ff3c4bb82d49befde954a44755c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/DestroyMagic.cs using Guid(22c08ff3c4bb82d49befde954a44755c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0ef4cd4164271f6ccae1a59591b108d') in 0.005006 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Animations/Locomotion--Run_N_Land.anim.fbx
+  artifactKey: Guid(3c033631149b9c541bcf155cd94cccba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Animations/Locomotion--Run_N_Land.anim.fbx using Guid(3c033631149b9c541bcf155cd94cccba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00483d6ba15ab33ebc27b83bbbf670f4') in 0.008532 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/ExternalAssets/SimpleFantasy/Prefabs/Props/SF_Prop_Chest_01.prefab
+  artifactKey: Guid(f5df14fae1373f14db8344cb2024e81f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SimpleFantasy/Prefabs/Props/SF_Prop_Chest_01.prefab using Guid(f5df14fae1373f14db8344cb2024e81f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c51c195941b8c4076d64ef0eb14ff9e6') in 0.010704 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Prefabs/LevelBlocks/BasicPathSplitRoom.prefab
+  artifactKey: Guid(425d2056be5ad6540995e9b58548e2c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/LevelBlocks/BasicPathSplitRoom.prefab using Guid(425d2056be5ad6540995e9b58548e2c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '539118b9047059796fc7dd28ff5c5e10') in 0.035539 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Sfx/Player_Land.wav
+  artifactKey: Guid(ff697d3070687ce4583faa0561a145a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Sfx/Player_Land.wav using Guid(ff697d3070687ce4583faa0561a145a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e06d9f76538a4475dba33e373b40a2da') in 0.008956 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/ExternalAssets/SimpleFantasy/Textures/Character_GoblinKing_Green.png
+  artifactKey: Guid(28ba06fa272d6eb4593515d1eade3716) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SimpleFantasy/Textures/Character_GoblinKing_Green.png using Guid(28ba06fa272d6eb4593515d1eade3716) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d98777e41fe4c37b828b1504da05de9') in 0.009000 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Fantasy Skybox FREE/Cubemaps/FS013/Images/FS013_Day_Cubemap_front.png
+  artifactKey: Guid(6413e41406a0ee5408f4e8a51c7b1290) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantasy Skybox FREE/Cubemaps/FS013/Images/FS013_Day_Cubemap_front.png using Guid(6413e41406a0ee5408f4e8a51c7b1290) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '417a919ab427b92508be9750cd0a1c79') in 0.009441 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_07.wav
+  artifactKey: Guid(dd1af302b8902684d9381de1f2d3a5af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_07.wav using Guid(dd1af302b8902684d9381de1f2d3a5af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fc9bf66129bd885c3f2b28f6825e0c9') in 0.008247 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/ExternalAssets/SMC Pack 1/Demo/DemoAssets/V_Text.cs
+  artifactKey: Guid(c2b16796facdc7b4980c7c9f4bda7444) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SMC Pack 1/Demo/DemoAssets/V_Text.cs using Guid(c2b16796facdc7b4980c7c9f4bda7444) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53469dec00a6aee68d8cf332fc865647') in 0.004567 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000861 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Textures/Armature_Legs_Normal.tif
+  artifactKey: Guid(b2c5d9c39850da946ae135dcb57faaea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Textures/Armature_Legs_Normal.tif using Guid(b2c5d9c39850da946ae135dcb57faaea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2fde0908260c4355e98a1b02e2a895c') in 0.012132 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/ExternalAssets/StarterAssets/Mobile/UI/UI_Icon_Sprint.png
+  artifactKey: Guid(b0fa70abd2a79904cb00b175dfd8ec7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/Mobile/UI/UI_Icon_Sprint.png using Guid(b0fa70abd2a79904cb00b175dfd8ec7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '975fdde0e0de3dbdeb5d02ffe9f58ea4') in 0.052466 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Prefabs/LevelBlocks/BasicDeadEnd.prefab
+  artifactKey: Guid(9812c7c059712424eb66b6cd829ff7e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/LevelBlocks/BasicDeadEnd.prefab using Guid(9812c7c059712424eb66b6cd829ff7e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc54e31714bda9bddb61d3b8cc67ac29') in 0.012904 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/ExternalAssets/SMC Pack 1/Demo/DemoAssets/V_SMC_Handler.cs
+  artifactKey: Guid(aa1bd229000283d499ae8e933077f7d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SMC Pack 1/Demo/DemoAssets/V_SMC_Handler.cs using Guid(aa1bd229000283d499ae8e933077f7d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5de31adbd91d11f452c6466c9a5c6f8') in 0.004343 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_10.wav
+  artifactKey: Guid(a3194b8bbc96ef84fab1f98f4b7dae3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Sfx/Player_Footstep_10.wav using Guid(a3194b8bbc96ef84fab1f98f4b7dae3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61f6b0e68bc7def00435ed85e4ef7cd4') in 0.008301 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Fantasy Skybox FREE/Cubemaps/FS013/Images/FS013_Day_Cubemap_right.png
+  artifactKey: Guid(e4f3a493b7f435a4d847b7a0f2d6427a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantasy Skybox FREE/Cubemaps/FS013/Images/FS013_Day_Cubemap_right.png using Guid(e4f3a493b7f435a4d847b7a0f2d6427a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4fb1e146c8b54122bdd982f22683f3c') in 0.009108 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/ExternalAssets/StarterAssets/Mobile/Scripts/VirtualInputs/UIVirtualJoystick.cs
+  artifactKey: Guid(f2cb8c4d669392748bb924209de33b85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/Mobile/Scripts/VirtualInputs/UIVirtualJoystick.cs using Guid(f2cb8c4d669392748bb924209de33b85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92e9e50cfa5f43d817708f6f82c3937b') in 0.004647 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Fantasy Skybox FREE/Cubemaps/FS013/Images/FS013_Day_Cubemap_left.png
+  artifactKey: Guid(014727d82348f1a4f8175752fb91f720) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantasy Skybox FREE/Cubemaps/FS013/Images/FS013_Day_Cubemap_left.png using Guid(014727d82348f1a4f8175752fb91f720) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5a7cceb133a8f203066fff8248302d3') in 0.009345 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Fantasy Skybox FREE/Cubemaps/FS013/Images/FS013_Day_Cubemap_down.png
+  artifactKey: Guid(bd047541345c68145ba0e6bacb5520fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantasy Skybox FREE/Cubemaps/FS013/Images/FS013_Day_Cubemap_down.png using Guid(bd047541345c68145ba0e6bacb5520fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e0cad28c9675ec7ffb1775caa1e3208') in 0.009336 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Prefabs/Goblin.prefab
+  artifactKey: Guid(10dcf9bae1e36994e81ec6444757d7a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Goblin.prefab using Guid(10dcf9bae1e36994e81ec6444757d7a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '355d4e1be8643138db696470fda6441d') in 0.081950 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Scripts/PlayerHealth.cs
+  artifactKey: Guid(914a6852555775a44986199e2ea6db9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PlayerHealth.cs using Guid(914a6852555775a44986199e2ea6db9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f8a2b83998e7f1097d342b7d58a4673') in 0.004717 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/ExternalAssets/StarterAssets/Mobile/Scripts/VirtualInputs/UIVirtualTouchZone.cs
+  artifactKey: Guid(65870f34fef70aa44b0f562cfc810220) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/Mobile/Scripts/VirtualInputs/UIVirtualTouchZone.cs using Guid(65870f34fef70aa44b0f562cfc810220) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f8aa6af70e80a93c8cb01106fba8b0d') in 0.004453 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/ExternalAssets/SimpleFantasy/Models/Characters/_Animations/Animations_Static.fbx
+  artifactKey: Guid(7039333667ba45840b1411867278ee2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SimpleFantasy/Models/Characters/_Animations/Animations_Static.fbx using Guid(7039333667ba45840b1411867278ee2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e6c48868057738906c92919267c3ae9') in 0.007907 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Animations/Jump--InAir.anim.fbx
+  artifactKey: Guid(063aa479676c4084ebf187660ca0a7b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Animations/Jump--InAir.anim.fbx using Guid(063aa479676c4084ebf187660ca0a7b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bb29d01d67fb28697269441cbd60d28') in 0.008260 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/ExternalAssets/SimpleFantasy/Models/Prefabbed/SF_Prop_Walkway_01.fbx
+  artifactKey: Guid(7dc021ff7ba9d3344884328a8d11b8bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SimpleFantasy/Models/Prefabbed/SF_Prop_Walkway_01.fbx using Guid(7dc021ff7ba9d3344884328a8d11b8bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4befadf719c8e82aaae310b21a2f0a32') in 0.010858 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Textures/Armature_Legs_MetallicSmoothness.tif
+  artifactKey: Guid(1c98c94efa7792645972ecf95e6f86c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Character/Textures/Armature_Legs_MetallicSmoothness.tif using Guid(1c98c94efa7792645972ecf95e6f86c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5acfa2b36ba7f2a782b8a655d2ba2935') in 0.011051 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Prefabs/LevelBlocks/BasicStair.prefab
+  artifactKey: Guid(377c2a7a2a7f59a4b9f84012d5c28fac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/LevelBlocks/BasicStair.prefab using Guid(377c2a7a2a7f59a4b9f84012d5c28fac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df5e0f9921eb1f00fe49a58b40552c0e') in 0.012263 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/ExternalAssets/SimpleFantasy/Prefabs/Environment/SF_Env_TwistedTree_01.prefab
+  artifactKey: Guid(4c075a190b3daf549be99f1525aeb031) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SimpleFantasy/Prefabs/Environment/SF_Env_TwistedTree_01.prefab using Guid(4c075a190b3daf549be99f1525aeb031) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7f8bf9d06a73344ea0d8323f25eac7d') in 0.009165 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/ExternalAssets/SimpleFantasy/Prefabs/Props/SF_Prop_Torch_01.prefab
+  artifactKey: Guid(afb1de9cca85ce248a75f02d1af04389) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SimpleFantasy/Prefabs/Props/SF_Prop_Torch_01.prefab using Guid(afb1de9cca85ce248a75f02d1af04389) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b34353e4851cc57e2421275bace1df9b') in 0.008970 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Materials/PillarMaterial.mat
+  artifactKey: Guid(1bfed457ac7c0184ca8756bcc95c4d3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/PillarMaterial.mat using Guid(1bfed457ac7c0184ca8756bcc95c4d3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48edac2229f319d4cde0f7b9d0d863ff') in 0.009357 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Scripts/LevelManager.cs
+  artifactKey: Guid(0c8ce6fbd166c634aa08d4d3337eb66b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/LevelManager.cs using Guid(0c8ce6fbd166c634aa08d4d3337eb66b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aad484c5ec27ea556292ec840ad71e20') in 0.004047 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Scripts/PlayerController.cs
+  artifactKey: Guid(2b1398c4c5ebe924483dd744af9a3085) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PlayerController.cs using Guid(2b1398c4c5ebe924483dd744af9a3085) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f7648dd615d9cbe34a29ac6b3199478') in 0.004380 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/ExternalAssets/SMC Pack 1/Pack/10.png
+  artifactKey: Guid(0bb68d41cd332d746a2ea8c8c6bebc01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SMC Pack 1/Pack/10.png using Guid(0bb68d41cd332d746a2ea8c8c6bebc01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f18a7a7111913e91e095bf92f9199d60') in 0.009785 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/ExternalAssets/StarterAssets/ThirdPersonController/Scripts/BasicRigidBodyPush.cs
+  artifactKey: Guid(909d917d73a63f940ac158d02e936645) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/ThirdPersonController/Scripts/BasicRigidBodyPush.cs using Guid(909d917d73a63f940ac158d02e936645) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4eda34bd1d498789d94ebdb933299637') in 0.004217 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Materials/PortalMaterial.mat
+  artifactKey: Guid(3052247f282fc3a4cb00fd317cfa8617) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/PortalMaterial.mat using Guid(3052247f282fc3a4cb00fd317cfa8617) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f57aed38eaa774db47a2526d1ecfb2c1') in 0.009348 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/ExternalAssets/SimpleFantasy/Models/Characters/_Animations/Animations_IK.fbx
+  artifactKey: Guid(6e4b26fde7f77c046bed3bb532de26f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SimpleFantasy/Models/Characters/_Animations/Animations_IK.fbx using Guid(6e4b26fde7f77c046bed3bb532de26f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b57a9652ddc99c7165510d2e4449a830') in 0.012579 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/ExternalAssets/SimpleFantasy/Models/Characters/_Animations/Mask_LowerBody.mask
+  artifactKey: Guid(f34433e648b38134b89fe27b9e6955cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SimpleFantasy/Models/Characters/_Animations/Mask_LowerBody.mask using Guid(f34433e648b38134b89fe27b9e6955cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e3103096dd08cfc7962b544a9556660') in 0.005662 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Prefabs/Player_3PS.prefab
+  artifactKey: Guid(3d6b20dceaf4e86428a213f2cec64190) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Player_3PS.prefab using Guid(3d6b20dceaf4e86428a213f2cec64190) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ccca1634c86ea76f967851e1322089f5') in 0.165033 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/ExternalAssets/SimpleFantasy/Materials/SF_Character_GoblinWarrior.mat
+  artifactKey: Guid(3ada332c7350e1346b7e760e962e298f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SimpleFantasy/Materials/SF_Character_GoblinWarrior.mat using Guid(3ada332c7350e1346b7e760e962e298f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0450fd9ca92ba72b8563db8b98b2e4a4') in 0.011890 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/ExternalAssets/Ultimate SFX Bundle/Magic Sounds Pro/Fire Bolts/Fire bolt 5.wav
+  artifactKey: Guid(65b02bb8dc3e93042a21fdbdfaf21e3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/Ultimate SFX Bundle/Magic Sounds Pro/Fire Bolts/Fire bolt 5.wav using Guid(65b02bb8dc3e93042a21fdbdfaf21e3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d0c00e63d64cf16edf88f39d1a4d8ad') in 0.010209 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/ExternalAssets/SimpleFantasy/Models/Characters/_Animations/Mask_Body.mask
+  artifactKey: Guid(4244c57bb194c0e48861fc59aaf8214d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SimpleFantasy/Models/Characters/_Animations/Mask_Body.mask using Guid(4244c57bb194c0e48861fc59aaf8214d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '638695097887510894cd9a455351a14b') in 0.004970 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/ExternalAssets/StarterAssets/Mobile/UI/UI_Icon_Jump.png
+  artifactKey: Guid(751aa1b6637101946b2fdbb7aa27d6ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/StarterAssets/Mobile/UI/UI_Icon_Jump.png using Guid(751aa1b6637101946b2fdbb7aa27d6ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0102dd9631fb0f1c42c4e8422bed5e9') in 0.052046 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/ExternalAssets/SimpleFantasy/Models/Prefabbed/SF_Prop_Chest_01.fbx
+  artifactKey: Guid(5877c3e07e223b94f9b26d5fc4ea2c65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExternalAssets/SimpleFantasy/Models/Prefabbed/SF_Prop_Chest_01.fbx using Guid(5877c3e07e223b94f9b26d5fc4ea2c65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef30c346b9eaa4827a7d6c3635010081') in 0.015425 seconds 
