@@ -15,7 +15,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        gameText.text = "Reach the portal\nto continue";
+        SetStartText();
         gameText.gameObject.SetActive(true);
         Invoke("RemoveGameText", 3);
     }
@@ -26,6 +26,23 @@ public class LevelManager : MonoBehaviour
 
     }
 
+    void SetStartText()
+    {
+        string levelName = SceneManager.GetActiveScene().name;
+
+        if(levelName == "Stage0")
+        {
+            gameText.text = "Enter the portal\nto start the game";
+        }
+        else if (levelName == "StageEnd")
+        {
+            gameText.text = "You have completed the game in it's\ncurrent state\nenter the portal to restart the game";
+        }
+        else
+        {
+            gameText.text = "Reach the portal\nto continue";
+        }
+    }
     void RemoveGameText()
     {
         gameText.gameObject.SetActive(false);

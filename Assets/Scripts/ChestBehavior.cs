@@ -5,11 +5,13 @@ using UnityEngine;
 public class ChestBehavior : MonoBehaviour
 {
     Transform player;
+    Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        anim = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -17,6 +19,7 @@ public class ChestBehavior : MonoBehaviour
     {
         if(Vector3.Distance(transform.position, player.position) < 5) {
             FindObjectOfType<LevelManager>().ChestFound();
+            anim.SetTrigger("openChest");
         }
     }
 }
