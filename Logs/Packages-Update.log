@@ -86,3 +86,11 @@ The following packages were added:
   com.unity.timeline@1.6.5
   com.unity.ugui@1.0.0
   com.unity.visualscripting@1.8.0
+
+=== Fri Jun  2 15:59:52 2023
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.postprocessing@3.2.2

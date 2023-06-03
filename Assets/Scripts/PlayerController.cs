@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
 
     CharacterController controller;
     Vector3 input, moveDirection;
-
+    
     void Start()
     {
         controller = GetComponent<CharacterController>();
