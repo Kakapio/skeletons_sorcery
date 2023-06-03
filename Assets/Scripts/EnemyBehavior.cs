@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class EnemyBehavior : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class EnemyBehavior : MonoBehaviour
 
     public EnemyStates currentState;
 
-    public Transform player;
+    public Transform playerTransform;
     public float moveSpeed = 5;
     public float attackRange = 2f;
     public float detectionRange = 20;
@@ -32,9 +33,9 @@ public class EnemyBehavior : MonoBehaviour
 
     void Start()
     {
-        if(player == null)
+        if(playerTransform == null)
         {
-            player = GameObject.FindGameObjectWithTag("Player").transform;
+            playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         }
 
         currentState = EnemyStates.Idle;
@@ -48,7 +49,7 @@ public class EnemyBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distanceToPlayer = Vector3.Distance(transform.position, player.position);
+        distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
 
         switch(currentState)
         {
@@ -85,8 +86,8 @@ public class EnemyBehavior : MonoBehaviour
 
     void UpdateChaseState()
     {
-        FaceTarget(player.position);
-        transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+        FaceTarget(playerTransform.position);
+        transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, moveSpeed * Time.deltaTime);
         
         anim.SetFloat("Speed_f", 0.51f);
 
@@ -127,7 +128,10 @@ public class EnemyBehavior : MonoBehaviour
 
     void UpdateDeadState()
     {
-        if(!isDead) {
+        if(!isDead)
+        {
+            ApplyVampireHeal();
+
             isDead = true;
             anim.SetInteger("MeleeType_int", -1);
             anim.SetFloat("Speed_f", 0f);
@@ -139,7 +143,17 @@ public class EnemyBehavior : MonoBehaviour
             Destroy(gameObject, 2f);
         }
     }
-    
+
+    private void ApplyVampireHeal()
+    {
+        var player = GameObject.FindWithTag("Player");
+        if (player.GetComponent<PlayerItems>().HasItem("VampireSoul"))
+        {
+            var vampireItem = player.GetComponent<PlayerItems>().GetItem("VampireSoul");
+            player.GetComponent<PlayerHealth>().Heal(1 * vampireItem.Count);
+        }
+    }
+
     private void SwingSound()
     {
         AudioSource.PlayClipAtPoint(attackSFX, transform.position);
@@ -149,7 +163,7 @@ public class EnemyBehavior : MonoBehaviour
     {
         if(distanceToPlayer < attackRange + 1)
         {
-            //apply damage
+            // apply damage
             var playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
             playerHealth.Damage(damageAmount);
             AudioSource.PlayClipAtPoint(hitSFX, Camera.main.transform.position);
