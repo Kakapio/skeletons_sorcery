@@ -12,18 +12,21 @@ public class PlayerItems : MonoBehaviour
     /// <param name="item"></param>
     public void GiveItem(LootDropData item)
     {
+        bool found = false;
         // Already have this item, increase the count instead.
         foreach (var loot in items)
         {
             if (loot.ItemName.Equals(item.ItemName))
             {
+                Debug.Log("Incremented count");
                 loot.IncrementCount();
-                return;
+                found = true;
             }
         }
         
         // Don't already have it, add it.
-        items.Add(item);
+        if (!found)
+            items.Add(item);
     }
 
     /// <summary>

@@ -33,7 +33,7 @@ public class LootDropPickup : MonoBehaviour
             }
             
             other.GetComponent<PlayerItems>().GiveItem(lootDropData);
-            Debug.Log("Gave player vampire powers");
+            Debug.Log($"Gave player {lootDrop} powers");
             Destroy(gameObject);
         }
     }
