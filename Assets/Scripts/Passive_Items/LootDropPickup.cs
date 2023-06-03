@@ -8,6 +8,15 @@ public class LootDropPickup : MonoBehaviour
 {
     public string lootDrop;
 
+    private float floatAmount = 0.0005f;
+    private float rotateSpeed = 8;
+
+    public void Update()
+    {
+        transform.Translate(new Vector3(0, Mathf.Sin(Time.realtimeSinceStartup) * floatAmount, 0));
+        transform.Rotate(new Vector3(0, rotateSpeed * Time.deltaTime, 0));
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         // Give the player the item they just touched.
