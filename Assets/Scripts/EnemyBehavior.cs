@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
+using UnityEngine.AI;
 
 public class EnemyBehavior : MonoBehaviour
 {
@@ -17,19 +17,28 @@ public class EnemyBehavior : MonoBehaviour
     public EnemyStates currentState;
 
     public Transform playerTransform;
-    public float moveSpeed = 5;
+    public Transform enemyEyes;
+    public float patrolSpeed = 2f;
+    public float chaseSpeed = 8f;
     public float attackRange = 2f;
-    public float detectionRange = 20;
+    public float detectionRange = 20f;
+    public float patrolRange = 10f;
     public int damageAmount = 20;
-    public float enemyRotationSpeed = 10;
+    public float enemyRotationSpeed = 10f;
+    public float fieldOfView = 150f;
+    public int deathScore = 1;
+    public bool canSprint = true;
     public AudioClip attackSFX;
     public AudioClip hitSFX;
     public AudioClip deathSFX;
-    
+
     Animator anim;
     bool isDead;
     bool attacking;
+    bool alert;
     float distanceToPlayer;
+    Vector3 startPos;
+    NavMeshAgent agent;
 
     void Start()
     {
@@ -37,13 +46,16 @@ public class EnemyBehavior : MonoBehaviour
         {
             playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         }
-
         currentState = EnemyStates.Idle;
 
         anim = gameObject.GetComponent<Animator>();
         isDead = false;
         attacking = false;
+        alert = false;
         distanceToPlayer = detectionRange + attackRange;
+        startPos = transform.position;
+        agent = GetComponent<NavMeshAgent>();
+        agent.stoppingDistance = attackRange;
     }
 
     // Update is called once per frame
@@ -73,33 +85,55 @@ public class EnemyBehavior : MonoBehaviour
 
     void UpdateIdleState()
     {
-        if(distanceToPlayer < detectionRange)
-        {  
-            currentState = EnemyStates.Chase;
-        }
+        currentState = EnemyStates.Patrol;
     }
 
     void UpdatePatrolState()
     {
-        //implement patrolling
+        anim.SetFloat("Speed_f", 0.3f);
+        agent.speed = patrolSpeed;
+
+        if(agent.remainingDistance <= agent.stoppingDistance)
+        {
+            Vector3 point;
+            if(GetNextPoint(startPos, patrolRange, out point))
+            {
+                agent.SetDestination(point);
+            }
+        }
+        else if(IsPlayerInClearFOV() || alert)
+        {
+            currentState = EnemyStates.Chase;
+        }
+
+        FaceTarget(agent.destination);
     }
 
     void UpdateChaseState()
     {
         FaceTarget(playerTransform.position);
-        transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, moveSpeed * Time.deltaTime);
+        agent.SetDestination(playerTransform.position);
         
-        anim.SetFloat("Speed_f", 0.51f);
+        if(canSprint)
+        {
+            anim.SetFloat("Speed_f", 0.51f);
+        }
+        else
+        {
+            anim.SetFloat("Speed_f", 0.5f);
+        }
+
+        agent.speed = chaseSpeed;
 
         if(distanceToPlayer < attackRange)
         {
             anim.SetFloat("Speed_f", 0f);
             currentState = EnemyStates.Attack;
         }
-        else if(distanceToPlayer > detectionRange)
+        else if(distanceToPlayer > detectionRange && !alert)
         {
             anim.SetFloat("Speed_f", 0f);
-            currentState = EnemyStates.Idle;
+            currentState = EnemyStates.Patrol;
         }
     }
 
@@ -109,11 +143,13 @@ public class EnemyBehavior : MonoBehaviour
         {
             if(distanceToPlayer > attackRange)
             {
-                currentState = EnemyStates.Idle;
+                currentState = EnemyStates.Chase;
             }
             else
             {
                 attacking = true;
+                agent.SetDestination(transform.position);
+                agent.speed = 0f;
 
                 // animate hit
                 anim.SetInteger("WeaponType_int", 12);
@@ -131,8 +167,13 @@ public class EnemyBehavior : MonoBehaviour
         if(!isDead)
         {
             ApplyVampireHeal();
+            FindObjectOfType<LevelManager>().UpdateScore(deathScore, "Enemy Killed");
+            //GetComponentInChildren<MeshCollider>().enabled = false;
 
             isDead = true;
+            agent.SetDestination(transform.position);
+            agent.speed = 0f;
+
             anim.SetInteger("MeleeType_int", -1);
             anim.SetFloat("Speed_f", 0f);
 
@@ -144,7 +185,44 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
-    private void ApplyVampireHeal()
+    bool GetNextPoint(Vector3 center, float range, out Vector3 target)
+    {
+        for (int i = 0; i < 30; i++)
+        {
+            Vector3 randomPoint = center + Random.insideUnitSphere * range;
+            NavMeshHit hit;
+            if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
+            {
+                target = hit.position;
+                return true;
+            }
+        }
+        target = Vector3.zero;
+        return false;
+    }
+
+    bool IsPlayerInClearFOV()
+    {
+        RaycastHit hit;
+        
+        Vector3 directionToPlayer = (playerTransform.position + new Vector3(0, 1f, 0)) - enemyEyes.position;
+
+        if(Vector3.Angle(directionToPlayer, enemyEyes.forward) <= fieldOfView)
+        {
+            if(Physics.Raycast(enemyEyes.position, directionToPlayer, out hit, detectionRange))
+            {
+                
+                if(hit.collider.CompareTag("Player"))
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    void ApplyVampireHeal()
     {
         var player = GameObject.FindWithTag("Player");
         if (player.GetComponent<PlayerItems>().HasItem("VampireSoul"))
@@ -174,6 +252,11 @@ public class EnemyBehavior : MonoBehaviour
     {
         anim.SetInteger("MeleeType_int", -1);
         attacking = false;
+    }
+
+    public void Alert()
+    {
+        alert = true;
     }
 
     public void Dead()

@@ -6,12 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    public static int fireballDamage = 20;
+    
     public Text gameText;
+    public Text scoreText;
+    public Text scoreInfoText;
 
     //public AudioClip gameOverSFX;
     //public AudioClip gameWonSFX;
 
     public string nextLevel;
+
+    static int score = 0;
+    string scoreInfo;
 
     void Start()
     {
@@ -42,6 +49,10 @@ public class LevelManager : MonoBehaviour
         {
             gameText.text = "Reach the portal\nto continue";
         }
+
+        scoreText.text = "Score: " + score;
+        scoreInfo = "";
+        scoreInfoText.text = scoreInfo;
     }
     void RemoveGameText()
     {
@@ -52,7 +63,33 @@ public class LevelManager : MonoBehaviour
     {
         gameText.text = "You found a chest!\nIn the future these will\nhave loot to help you";
         gameText.gameObject.SetActive(true);
+        UpdateScore(5, "Chest Found");
         Invoke("RemoveGameText", 3);
+    }
+
+    public void UpdateScore(int value, string reason)
+    {
+        score += value;
+        scoreText.text = "Score: " + score;
+        string info = "+" + value + " " + reason + "\n";
+        scoreInfo += info;
+        scoreInfoText.text = scoreInfo;
+        Invoke("UpdateScoreInfo", 2);
+    }
+
+    public void UpdateScoreInfo()
+    {
+        int index = scoreInfo.IndexOf("\n");
+        
+        if(index >= scoreInfo.Length)
+        {
+            scoreInfo = "";
+        }
+        else
+        {
+            scoreInfo = scoreInfo[(index + 1)..];
+        }
+        scoreInfoText.text = scoreInfo;
     }
 
     public void LevelLost()

@@ -24,12 +24,16 @@ public class DestroyMagic : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if(!other.CompareTag("Player"))
         {
-            if(other.CompareTag("Enemy"))
+            /*if(other.CompareTag("Enemy"))
             {
                 // do enemy damage/behavior
                 // for now just destroy
                 other.GetComponentInParent<EnemyBehavior>().DeadByFire();
             }
+            if(other.CompareTag("Breakable"))
+            {
+                other.GetComponent<Breakable>().Break();
+            }*/
 
             GameObject explosion = Instantiate(explosionFX, transform.position, transform.rotation);
             Destroy(explosion, 2f);

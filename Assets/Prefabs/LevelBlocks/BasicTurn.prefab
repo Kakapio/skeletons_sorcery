@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3617230068449800026}
   - component: {fileID: 7163560637421963479}
   - component: {fileID: 2190918576661870021}
+  - component: {fileID: 6876138517195930390}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -97,6 +98,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!208 &6876138517195930390
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818053173161622647}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &4217021107742422136
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,7 +131,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &6781034210720111220
 Transform:
@@ -206,6 +223,7 @@ GameObject:
   - component: {fileID: 6400700420537770047}
   - component: {fileID: 7760350576868729629}
   - component: {fileID: 2820055629304304862}
+  - component: {fileID: 7386088208909070585}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -291,6 +309,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!208 &7386088208909070585
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5133594511686222144}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &6692814162698221880
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,6 +471,7 @@ GameObject:
   - component: {fileID: 7221284281408136203}
   - component: {fileID: 3450860318145039897}
   - component: {fileID: 9151167567217938680}
+  - component: {fileID: 5445360458250074624}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -522,6 +557,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!208 &5445360458250074624
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9037518646300575715}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &645521863118265669
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -598,6 +649,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 7dc021ff7ba9d3344884328a8d11b8bb, type: 3}
+--- !u!208 &8931072992918572914
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645521863118363185}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 3.009, y: 2.993, z: 1.7070001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 2.993, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!4 &645521863118635733 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 450448, guid: cdabf0b6d14d47941a4422af45d43f4e, type: 3}

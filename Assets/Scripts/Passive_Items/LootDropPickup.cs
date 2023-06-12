@@ -7,9 +7,11 @@ using UnityEngine;
 public class LootDropPickup : MonoBehaviour
 {
     public string lootDrop;
+    public Sprite lootDropSprite;
 
     private float floatAmount = 0.0005f;
     private float rotateSpeed = 8;
+    bool pickedUp = false;
 
     public void Update()
     {
@@ -20,20 +22,28 @@ public class LootDropPickup : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Give the player the item they just touched.
-        if (other.tag.Equals("Player"))
+        if(other.tag.Equals("Player") && !pickedUp)
         {
+            pickedUp = true;
             LootDropData lootDropData;
-            switch (lootDrop)
+            switch(lootDrop)
             {
                 case "VampireSoul":
-                    lootDropData = new VampireSoul();
+                    lootDropData = new VampireSoul(lootDropSprite);
+                    Debug.Log("Gave player vampire powers");
+                    break;
+                case "ExampleLoot":
+                    lootDropData = new ExampleLoot(lootDropSprite);
+                    Debug.Log("Picked up example loot");
                     break;
                 default:
                     throw new Exception("Invalid loot drop name provided.");
             }
             
+            
             other.GetComponent<PlayerItems>().GiveItem(lootDropData);
-            Debug.Log("Gave player vampire powers");
+            FindObjectOfType<LevelManager>().UpdateScore(2, "Loot Picked Up");
+            FindObjectOfType<LootCount>().UpdateLootCounts();
             Destroy(gameObject);
         }
     }

@@ -1,8 +1,10 @@
-﻿namespace Passive_Items
+﻿using UnityEngine;
+
+namespace Passive_Items
 {
     public class VampireSoul : LootDropData
     {
-        public VampireSoul() : base("VampireSoul")
+        public VampireSoul(Sprite sprite) : base("VampireSoul", sprite)
         {
         }
     }

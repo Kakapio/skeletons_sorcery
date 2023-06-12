@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerItems : MonoBehaviour
 {
-    private List<LootDropData> items = new List<LootDropData>();
+    public static List<LootDropData> items = new List<LootDropData>();
     
     /// <summary>
     /// Give the player a given item.
@@ -12,18 +12,21 @@ public class PlayerItems : MonoBehaviour
     /// <param name="item"></param>
     public void GiveItem(LootDropData item)
     {
-        // Already have this item, increase the count instead.
-        foreach (var loot in items)
+        if(HasItem(item.ItemName))
         {
-            if (loot.ItemName.Equals(item.ItemName))
+            foreach (var loot in items)
             {
-                loot.IncrementCount();
-                return;
+                if (loot.ItemName.Equals(item.ItemName))
+                {
+                    loot.IncrementCount();
+                    return;
+                }
             }
         }
-        
-        // Don't already have it, add it.
-        items.Add(item);
+        else
+        {
+            items.Add(item);
+        }
     }
 
     /// <summary>
