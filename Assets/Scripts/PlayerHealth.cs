@@ -40,7 +40,10 @@ public class PlayerHealth : MonoBehaviour
 
     public void Heal(int healAmount)
     {
+        Debug.Log($"Healing player by {healAmount}");
+        Debug.Log("Current health: " + currentHealth);
         currentHealth = Mathf.Clamp(currentHealth + healAmount, 0, maxHealth);
+        healthSlider.value = currentHealth;
     }
 
     void PlayerDies()

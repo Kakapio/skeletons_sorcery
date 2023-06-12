@@ -227,6 +227,7 @@ public class EnemyBehavior : MonoBehaviour
         var player = GameObject.FindWithTag("Player");
         if (player.GetComponent<PlayerItems>().HasItem("VampireSoul"))
         {
+            Debug.Log($"Player has {player.GetComponent<PlayerItems>().GetItem("VampireSoul").Count} vampire souls");
             var vampireItem = player.GetComponent<PlayerItems>().GetItem("VampireSoul");
             player.GetComponent<PlayerHealth>().Heal(1 * vampireItem.Count);
         }

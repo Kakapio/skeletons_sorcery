@@ -30,11 +30,9 @@ public class LootDropPickup : MonoBehaviour
             {
                 case "VampireSoul":
                     lootDropData = new VampireSoul(lootDropSprite);
-                    Debug.Log("Gave player vampire powers");
                     break;
                 case "ExampleLoot":
                     lootDropData = new ExampleLoot(lootDropSprite);
-                    Debug.Log("Picked up example loot");
                     break;
                 default:
                     throw new Exception("Invalid loot drop name provided.");
@@ -44,6 +42,8 @@ public class LootDropPickup : MonoBehaviour
             other.GetComponent<PlayerItems>().GiveItem(lootDropData);
             FindObjectOfType<LevelManager>().UpdateScore(2, "Loot Picked Up");
             FindObjectOfType<LootCount>().UpdateLootCounts();
+            Debug.Log($"Gave player {lootDrop} powers");
+            
             Destroy(gameObject);
         }
     }

@@ -13,7 +13,6 @@ public class PlayerItems : MonoBehaviour
     public void GiveItem(LootDropData item)
     {
         if(HasItem(item.ItemName))
-        {
             foreach (var loot in items)
             {
                 if (loot.ItemName.Equals(item.ItemName))
@@ -22,7 +21,6 @@ public class PlayerItems : MonoBehaviour
                     return;
                 }
             }
-        }
         else
         {
             items.Add(item);
