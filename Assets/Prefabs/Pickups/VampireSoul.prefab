@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lootDrop: VampireSoul
-  lootDropSprite: {fileID: 21300000, guid: a31e77e5c46776e48995f8fdf20a63ae, type: 3}
+  lootDropSprite: {fileID: 21300000, guid: fe628efbc47245045b1ab765a4e0fd27, type: 3}
 --- !u!64 &257671451
 MeshCollider:
   m_ObjectHideFlags: 0

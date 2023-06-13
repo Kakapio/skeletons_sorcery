@@ -4,7 +4,7 @@ namespace Passive_Items
 {
     public class ExampleLoot : LootDropData
     {
-        private readonly int pointValue = 25;
+        private readonly int pointValue = 5;
         
         public ExampleLoot(Sprite sprite) : base("ExampleLoot", sprite)
         {
@@ -12,7 +12,7 @@ namespace Passive_Items
         
         public override void Activate()
         {
-            GameObject.FindWithTag("LevelManager").GetComponent<LevelManager>().UpdateScore(pointValue, "Collected money loot.");
+            GameObject.FindObjectOfType<LevelManager>().UpdateScore(pointValue, "Found Gold");
         }
     }
 }

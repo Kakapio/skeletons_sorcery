@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f49d051aad0de7c418f3e84066fb7826, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loot: {fileID: 6689973956740010960, guid: 61f1da57646ab614bad778536a0f8f2a, type: 3}
+  loot: {fileID: 6134308729960725786, guid: ae91a69a344967f429bb607b41639598, type: 3}
   openSFX: {fileID: 8300000, guid: a9da280ddc686cb49bd91aa00f07c664, type: 3}
 --- !u!1 &4424450820545156639
 GameObject:

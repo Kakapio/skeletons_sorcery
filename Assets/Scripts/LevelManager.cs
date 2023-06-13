@@ -61,7 +61,7 @@ public class LevelManager : MonoBehaviour
 
     public void ChestFound()
     {
-        gameText.text = "You found a chest!\nIn the future these will\nhave loot to help you";
+        gameText.text = "";
         gameText.gameObject.SetActive(true);
         UpdateScore(5, "Chest Found");
         Invoke("RemoveGameText", 3);

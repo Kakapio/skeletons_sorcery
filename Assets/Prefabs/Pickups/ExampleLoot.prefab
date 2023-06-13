@@ -133,4 +133,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lootDrop: ExampleLoot
-  lootDropSprite: {fileID: 21300000, guid: 0bb68d41cd332d746a2ea8c8c6bebc01, type: 3}
+  lootDropSprite: {fileID: 21300000, guid: 841aacf6f10ff8d4fa4649a853a0dc20, type: 3}
