@@ -107,6 +107,12 @@ public class EnemyBehavior : MonoBehaviour
         }
 
         FaceTarget(agent.destination);
+
+        if(agent.isOnOffMeshLink)
+        {
+            anim.SetBool("Jump_b", true);
+            Invoke("ResetJump", 0.25f);
+        }
     }
 
     void UpdateChaseState()
@@ -134,6 +140,12 @@ public class EnemyBehavior : MonoBehaviour
         {
             anim.SetFloat("Speed_f", 0f);
             currentState = EnemyStates.Patrol;
+        }
+    
+        if(agent.isOnOffMeshLink)
+        {
+            anim.SetBool("Jump_b", true);
+            Invoke("ResetJump", 0.25f);
         }
     }
 
@@ -233,12 +245,17 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
-    private void SwingSound()
+    void ResetJump()
+    {
+        anim.SetBool("Jump_b", false);
+    }
+
+    void SwingSound()
     {
         AudioSource.PlayClipAtPoint(attackSFX, transform.position);
     }
 
-    private void CheckAttackHit()
+    void CheckAttackHit()
     {
         if(distanceToPlayer < attackRange + 1)
         {
@@ -249,7 +266,7 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
-    private void ResetAttack()
+    void ResetAttack()
     {
         anim.SetInteger("MeleeType_int", -1);
         attacking = false;
