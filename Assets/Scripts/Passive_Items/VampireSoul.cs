@@ -7,5 +7,9 @@ namespace Passive_Items
         public VampireSoul(Sprite sprite) : base("VampireSoul", sprite)
         {
         }
+
+        public override void Activate()
+        {
+        }
     }
 }

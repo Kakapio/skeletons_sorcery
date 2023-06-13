@@ -1,9 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Passive_Items;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public abstract class LootDropData
 {
@@ -22,4 +17,6 @@ public abstract class LootDropData
     {
         Count++;
     }
+
+    public abstract void Activate();
 }

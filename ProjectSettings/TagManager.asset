@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Fireball
   - Breakable
+  - LevelManager
   layers:
   - Default
   - TransparentFX

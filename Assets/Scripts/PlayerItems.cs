@@ -24,6 +24,7 @@ public class PlayerItems : MonoBehaviour
         else
         {
             items.Add(item);
+            item.Activate();
         }
     }
 

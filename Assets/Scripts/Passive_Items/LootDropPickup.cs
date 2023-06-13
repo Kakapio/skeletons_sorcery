@@ -34,10 +34,12 @@ public class LootDropPickup : MonoBehaviour
                 case "ExampleLoot":
                     lootDropData = new ExampleLoot(lootDropSprite);
                     break;
+                case "CuckooFeather":
+                    lootDropData = new CuckooFeather(lootDropSprite);
+                    break;
                 default:
                     throw new Exception("Invalid loot drop name provided.");
             }
-            
             
             other.GetComponent<PlayerItems>().GiveItem(lootDropData);
             FindObjectOfType<LevelManager>().UpdateScore(2, "Loot Picked Up");
