@@ -8,10 +8,8 @@ public class Moveable : MonoBehaviour
     public int impactStrength = 100;
 
     private void OnCollisionEnter(Collision collision) {
-        print("A");
         if(collision.gameObject.CompareTag("Fireball"))
         {
-            print("B");
             Vector3 bounceDirection = collision.GetContact(0).normal;
 
             Rigidbody rb = GetComponent<Rigidbody>();
