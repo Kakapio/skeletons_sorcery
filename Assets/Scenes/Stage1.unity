@@ -1692,7 +1692,7 @@ MonoBehaviour:
   gameText: {fileID: 1908640088}
   scoreText: {fileID: 1981367581}
   scoreInfoText: {fileID: 2072626241}
-  nextLevel: StageEnd
+  nextLevel: Stage2
 --- !u!4 &359737940
 Transform:
   m_ObjectHideFlags: 0
