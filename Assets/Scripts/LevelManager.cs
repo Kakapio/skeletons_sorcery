@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    public static int fireballDamage = 20;
+    public static int fireballDamage = 8;
+    public static int iceSpearDamage = 13;
     
     public Text gameText;
     public Text scoreText;

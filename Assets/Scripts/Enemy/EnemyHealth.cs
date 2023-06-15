@@ -36,10 +36,6 @@ public class EnemyHealth : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if(other.gameObject.CompareTag("Fireball"))
-        {
-            TakeDamage(LevelManager.fireballDamage);
-            GetComponent<EnemyBehavior>().Alert();
-        }
+        
     }
 }

@@ -887,9 +887,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6d9657effdceb6498a4c1995b3badaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 8680271039583177988, guid: 5792ff608e9659242965be2c85e0c7ca, type: 3}
+  fireballPrefab: {fileID: 8680271039583177988, guid: 5792ff608e9659242965be2c85e0c7ca, type: 3}
+  icespearPrefab: {fileID: 4783090058030970878, guid: 65ae0a06b26a26b4ea4d1376f1c744f4, type: 3}
+  venomBombPrefab: {fileID: 0}
   projectileSpeed: 50
   projectileSFX: {fileID: 8300000, guid: b0c2d442ba6c1164f8cce5f73fd42fac, type: 3}
+  fireballCooldown: 0.3
+  icespearCooldown: 1
+  venomBombCooldown: 5
 --- !u!114 &1049544165082102180
 MonoBehaviour:
   m_ObjectHideFlags: 0
