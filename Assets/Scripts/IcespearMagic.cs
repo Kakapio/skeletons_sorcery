@@ -7,10 +7,13 @@ public class IcespearMagic : MonoBehaviour
     public float destroyDuration = 3;
     public AudioClip launchSFX; // A spear being thrown/launched.
     public AudioClip impactSFX; // Sound of flesh being pierced.
+    public GameObject iceexplosionFX;
+
+    private bool alreadyHit = false;
 
     void Start()
     {
-        AudioSource.PlayClipAtPoint(launchSFX, transform.position);
+        AudioSource.PlayClipAtPoint(launchSFX, transform.position, 0.5f);
         Destroy(gameObject, destroyDuration);
     }
 
@@ -21,13 +24,21 @@ public class IcespearMagic : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.CompareTag("Player") || alreadyHit)
+            return;
+
+        alreadyHit = true;
+        
         if (other.gameObject.CompareTag("Enemy"))
         {
             other.GetComponent<EnemyHealth>().TakeDamage(LevelManager.iceSpearDamage);
             other.GetComponent<EnemyBehavior>().Alert();
         }
 
-        AudioClip impact = Instantiate(impactSFX, transform.position, transform.rotation);
-        Destroy(impact, 2f);
+        GameObject explosion = Instantiate(iceexplosionFX, transform.position, transform.rotation);
+        Destroy(explosion, 2f);
+        
+        AudioSource.PlayClipAtPoint(impactSFX, transform.position, 1.5f);
+        //Destroy(gameObject, 0.05f);
     }
 }

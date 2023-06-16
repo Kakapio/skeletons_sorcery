@@ -8,10 +8,12 @@ public class FireballMagic : MonoBehaviour
     public AudioClip burnUpSFX;
     public AudioClip impactSFX;
     public GameObject explosionFX;
+    
+    private bool alreadyHit = false;
 
     void Start()
     {
-        AudioSource.PlayClipAtPoint(burnUpSFX, transform.position);
+        AudioSource.PlayClipAtPoint(burnUpSFX, transform.position, 0.2f);
         Destroy(gameObject, destroyDuration);
     }
 
@@ -22,6 +24,11 @@ public class FireballMagic : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.CompareTag("Player"))
+            return;
+        
+        alreadyHit = true;
+        
         if (other.gameObject.CompareTag("Enemy"))
         {
             other.GetComponent<EnemyHealth>().TakeDamage(LevelManager.fireballDamage);
@@ -31,7 +38,7 @@ public class FireballMagic : MonoBehaviour
         GameObject explosion = Instantiate(explosionFX, transform.position, transform.rotation);
         Destroy(explosion, 2f);
 
-        AudioSource.PlayClipAtPoint(impactSFX, transform.position);
+        AudioSource.PlayClipAtPoint(impactSFX, transform.position, 0.2f);
         Destroy(gameObject, 0.05f);
     }
 }
