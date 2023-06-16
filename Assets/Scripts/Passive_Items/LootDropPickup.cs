@@ -11,7 +11,7 @@ public class LootDropPickup : MonoBehaviour
 
     private float floatAmount = 0.0005f;
     private float rotateSpeed = 8;
-    bool pickedUp = false;
+    private bool pickedUp = false;
 
     public void Update()
     {

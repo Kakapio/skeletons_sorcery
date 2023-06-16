@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IcespearMagic : MonoBehaviour
+public class BlueflameMagic : MonoBehaviour
 {
     public float destroyDuration = 3;
-    public AudioClip launchSFX; // A spear being thrown/launched.
-    public AudioClip impactSFX; // Sound of flesh being pierced.
-    public GameObject iceexplosionFX;
-
+    public AudioClip burnUpSFX;
+    public AudioClip impactSFX;
+    public GameObject explosionFX;
+    
     private bool alreadyHit = false;
 
     void Start()
     {
-        AudioSource.PlayClipAtPoint(launchSFX, transform.position, 0.5f);
+        AudioSource.PlayClipAtPoint(burnUpSFX, transform.position, 0.2f);
         Destroy(gameObject, destroyDuration);
     }
 
@@ -26,19 +26,19 @@ public class IcespearMagic : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") || alreadyHit)
             return;
-
+        
         alreadyHit = true;
         
         if (other.gameObject.CompareTag("Enemy"))
         {
-            other.GetComponent<EnemyHealth>().TakeDamage(LevelManager.iceSpearDamage);
+            other.GetComponent<EnemyHealth>().TakeDamage(LevelManager.blueFireballDamage);
             other.GetComponent<EnemyBehavior>().Alert();
         }
 
-        GameObject explosion = Instantiate(iceexplosionFX, transform.position, transform.rotation);
+        GameObject explosion = Instantiate(explosionFX, transform.position, transform.rotation);
         Destroy(explosion, 2f);
-        
-        AudioSource.PlayClipAtPoint(impactSFX, transform.position, 1.5f);
-        //Destroy(gameObject, 0.05f);
+
+        AudioSource.PlayClipAtPoint(impactSFX, transform.position, 0.2f);
+        Destroy(gameObject, 0.05f);
     }
 }

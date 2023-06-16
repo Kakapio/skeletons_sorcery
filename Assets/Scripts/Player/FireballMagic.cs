@@ -24,7 +24,7 @@ public class FireballMagic : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") || alreadyHit)
             return;
         
         alreadyHit = true;

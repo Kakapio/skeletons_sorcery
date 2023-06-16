@@ -10,6 +10,8 @@ TagManager:
   - Fireball
   - Breakable
   - LevelManager
+  - Pickup
+  - PlayerBuff
   layers:
   - Default
   - TransparentFX
