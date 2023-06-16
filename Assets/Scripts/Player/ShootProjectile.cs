@@ -15,6 +15,7 @@ enum PlayerProjectile
 public class ShootProjectile : MonoBehaviour
 {
     public GameObject fireballPrefab;
+    public GameObject bluefireballPrefab;
     public GameObject icespearPrefab;
     public GameObject venomBombPrefab;
     public float projectileSpeed = 50;

@@ -23,7 +23,7 @@ public class IcespearMagic : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            other.GetComponent<EnemyHealth>().TakeDamage(LevelManager.fireballDamage);
+            other.GetComponent<EnemyHealth>().TakeDamage(LevelManager.iceSpearDamage);
             other.GetComponent<EnemyBehavior>().Alert();
         }
 

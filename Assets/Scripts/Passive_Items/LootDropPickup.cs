@@ -37,6 +37,9 @@ public class LootDropPickup : MonoBehaviour
                 case "CuckooFeather":
                     lootDropData = new CuckooFeather(lootDropSprite);
                     break;
+                case "Blueflame":
+                    lootDropData = new Blueflame(lootDropSprite);
+                    break;
                 default:
                     throw new Exception("Invalid loot drop name provided.");
             }
