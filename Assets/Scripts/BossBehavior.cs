@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Serialization;
 
 enum BossPhase
 {
@@ -12,6 +13,7 @@ enum BossPhase
 public class BossBehavior : MonoBehaviour
 {
     public float bossRotationSpeed = 10f;
+    public int activateDistance = 80;
     public int damageAmount = 10;
     public float attackRange = 3f;
     public float chaseSpeed = 4f;
@@ -20,6 +22,7 @@ public class BossBehavior : MonoBehaviour
     public GameObject[] summonLocations;
     public AudioClip hitSFX;
     public AudioClip attackSFX;
+    public AudioClip summonSFX;
     
     private BossPhase bossPhase = BossPhase.Summon;
     private int currentHealth = 1000;
@@ -28,6 +31,7 @@ public class BossBehavior : MonoBehaviour
     private float distanceToPlayer;
     private bool attacking;
     private Animator anim;
+    private bool bossActive = false;
     
     // Start is called before the first frame update
     void Start()
@@ -42,20 +46,26 @@ public class BossBehavior : MonoBehaviour
     void Update()
     {
         distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
+        CheckBossActivation();
+        
+        if (bossActive == false)
+            return;
         
         switch (bossPhase)
         {
             case BossPhase.Melee:
+                anim.SetFloat("Speed_f", 0.7f);
                 FaceTarget(playerTransform.position);
                 agent.SetDestination(playerTransform.position);
                 
                 if(distanceToPlayer < attackRange)
                 {
-                    //anim.SetFloat("Speed_f", 0f);
+                    anim.SetFloat("Speed_f", 0f);
                     bossPhase = BossPhase.Attack;
                 }
                 break;
             case BossPhase.Summon:
+                PlaySummonAudio();
                     for (int i = 0; i < summonLocations.Length; i++)
                     {
                         Debug.Log($"Summoning enemy {i}...");
@@ -90,6 +100,19 @@ public class BossBehavior : MonoBehaviour
                     }
                 }
                 break;
+        }
+    }
+
+    private void PlaySummonAudio()
+    {
+    }
+
+    private void CheckBossActivation()
+    {
+        if (distanceToPlayer <= activateDistance)
+        {
+            bossActive = true;
+            GameObject.FindWithTag("Gate").GetComponent<BoxCollider>().isTrigger = false;
         }
     }
 

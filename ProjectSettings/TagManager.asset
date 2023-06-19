@@ -12,6 +12,7 @@ TagManager:
   - LevelManager
   - Pickup
   - PlayerBuff
+  - Gate
   layers:
   - Default
   - TransparentFX
