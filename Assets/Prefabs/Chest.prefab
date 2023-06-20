@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 4424450820546825885}
   - component: {fileID: 250432144321702715}
   - component: {fileID: 5097752772847414175}
-  - component: {fileID: 7497223756240861905}
+  - component: {fileID: 4611049515489689882}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Chest
@@ -295,7 +295,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f49d051aad0de7c418f3e84066fb7826, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reachDistance: 8
   possibleLoot:
   - {fileID: 4875081913690173852, guid: 99f33067ddeeb214984d43ea4d0d1126, type: 3}
   - {fileID: 1743580085610643952, guid: e75541dfcf6a1664a95ec0baa95be817, type: 3}
@@ -303,7 +302,7 @@ MonoBehaviour:
   - {fileID: 6134308729960725786, guid: ae91a69a344967f429bb607b41639598, type: 3}
   openSFX: {fileID: 8300000, guid: a9da280ddc686cb49bd91aa00f07c664, type: 3}
   chestText: {fileID: 6956445798695112075}
---- !u!65 &7497223756240861905
+--- !u!65 &4611049515489689882
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -314,8 +313,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
-  m_Center: {x: 0, y: 1.5, z: 0}
+  m_Size: {x: 2.3353767, y: 1.5, z: 1.6294861}
+  m_Center: {x: 0, y: 0.75, z: 0}
 --- !u!1 &4424450820545156639
 GameObject:
   m_ObjectHideFlags: 0

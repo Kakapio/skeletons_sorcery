@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     public static bool isPlayerDead;
 
     int currentHealth;
+    Animator anim;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,8 @@ public class PlayerHealth : MonoBehaviour
         healthSlider.value = currentHealth;
 
         isPlayerDead = false;
+
+        anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
     }
 
     public void Damage(int damageAmount)
@@ -48,11 +51,9 @@ public class PlayerHealth : MonoBehaviour
 
     void PlayerDies()
     {
-        Debug.Log("Player is dead...");
-
         //AudioSource.PlayClipAtPoint(deadSFX, transform.position);
         isPlayerDead = true;
-
+        anim.SetInteger("Dead", Random.Range(1,3));
         FindObjectOfType<LevelManager>().LevelLost();
     }
 }

@@ -20,15 +20,17 @@ public class ShootProjectile : MonoBehaviour
     public GameObject venomBombPrefab;
     public float projectileSpeed = 50;
     public AudioClip projectileSFX;
-    public float fireballCooldown = 0.3f;
+    public float fireballCooldown = 0.7f;
     public float icespearCooldown = 1f;
     public float venomBombCooldown = 5f;
 
-    private PlayerProjectile playerProjectile = PlayerProjectile.Fireball;
-    private float timeSinceLastShoot;
+    Animator anim;
+    PlayerProjectile playerProjectile = PlayerProjectile.Fireball;
+    float timeSinceLastShoot;
 
     void Start()
     {
+        anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -56,21 +58,33 @@ public class ShootProjectile : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && CooldownMet())
         {
             timeSinceLastShoot = 0;
-            var shotPosition = CalculateShotPosition(out var mouseWorldPosition);
-            Vector3 aimDirection = (mouseWorldPosition - shotPosition).normalized;
-            Quaternion aimRotation = Quaternion.LookRotation(aimDirection, Vector3.up);
+            
+            anim.SetInteger("Attack", UnityEngine.Random.Range(1, 3));
+            Invoke("AttackDelay", 0.15f);
+            Invoke("ResetAttackAnim", 0.5f);
+        }
+    }
 
-            GameObject projectile = Instantiate(GetProjectilePrefab(),
+    void AttackDelay()
+    {
+        var shotPosition = CalculateShotPosition(out var mouseWorldPosition);
+        Vector3 aimDirection = (mouseWorldPosition - shotPosition).normalized;
+        Quaternion aimRotation = Quaternion.LookRotation(aimDirection, Vector3.up);
+
+        GameObject projectile = Instantiate(GetProjectilePrefab(),
                 shotPosition, aimRotation);
 
-            Rigidbody rb = projectile.GetComponent<Rigidbody>();
+        Rigidbody rb = projectile.GetComponent<Rigidbody>();
 
-            rb.AddForce(aimDirection * projectileSpeed, ForceMode.VelocityChange);
+        rb.AddForce(aimDirection * projectileSpeed, ForceMode.VelocityChange);
 
-            projectile.transform.SetParent(
+        projectile.transform.SetParent(
                 GameObject.FindGameObjectWithTag("ProjectileParent").transform);
+    }
 
-        }
+    void ResetAttackAnim()
+    {
+        anim.SetInteger("Attack", 0);
     }
 
     private bool CooldownMet()

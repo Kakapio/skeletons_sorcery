@@ -41,6 +41,7 @@ public class ChestBehavior : MonoBehaviour
     public void OpenChest()
     {
         open = true;
+        RemoveText();
         FindObjectOfType<LevelManager>().ChestFound();
         anim.SetTrigger("openChest");
         AudioSource.PlayClipAtPoint(openSFX, transform.position);
