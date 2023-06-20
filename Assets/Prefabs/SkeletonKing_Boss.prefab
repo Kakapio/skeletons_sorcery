@@ -272,10 +272,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossRotationSpeed: 10
+  activateDistance: 80
+  damageAmount: 10
+  attackRange: 3
+  chaseSpeed: 4
   summonFrequency: 60
+  skullAttackFrequency: 15
   enemySummon: {fileID: 5296952360472626388, guid: ed84e67cfe4d278458f0094b598a2f58, type: 3}
+  skullAttack: {fileID: 8510434001972540426, guid: 597610159f51f8b4c8c27aa3ff92ee4d, type: 3}
   summonLocations:
   - {fileID: 0}
+  hitSFX: {fileID: 0}
+  attackSFX: {fileID: 0}
+  summonSFX: {fileID: 0}
 --- !u!1 &5377713716875242604
 GameObject:
   m_ObjectHideFlags: 0

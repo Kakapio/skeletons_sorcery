@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Serialization;
@@ -21,7 +22,9 @@ public class BossBehavior : MonoBehaviour
     public float attackRange = 3f;
     public float chaseSpeed = 4f;
     public float summonFrequency = 60f;
+    public float skullAttackFrequency = 15f;
     public GameObject enemySummon;
+    public GameObject skullAttack;
     public GameObject[] summonLocations;
     public AudioClip hitSFX;
     public AudioClip attackSFX;
@@ -48,6 +51,7 @@ public class BossBehavior : MonoBehaviour
         playerTransform = GameObject.FindWithTag("Player").transform;
         healthbar = GameObject.FindWithTag("BossHealth");
         healthbar.SetActive(false);
+        InvokeRepeating("SkullRangedAttack", skullAttackFrequency * 2, skullAttackFrequency);
     }
 
     // Update is called once per frame
@@ -117,6 +121,17 @@ public class BossBehavior : MonoBehaviour
                 agent.speed = 0;
                 break;
         }
+    }
+
+    void SkullRangedAttack()
+    {
+        var spawnPosition = transform.position;
+        spawnPosition.y += 7;
+        spawnPosition.z += 4;
+
+        Instantiate(skullAttack, spawnPosition, Quaternion.identity);
+        Instantiate(skullAttack, new Vector3(spawnPosition.x * -1, spawnPosition.y, spawnPosition.z), Quaternion.identity);
+        Debug.Log("Boss is doing ranged skull attack.");
     }
 
     private void PlaySummonAudio()

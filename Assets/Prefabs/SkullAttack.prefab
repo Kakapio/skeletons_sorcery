@@ -15143,3 +15143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb0a8e28ae618a458493fa5e526aad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activateDistance: 3
+  speed: 4
+  detonateTime: 1
+  explodeFX: {fileID: 1098398252141382567, guid: f802e5fc00f4e72468051b38e38a2de1, type: 3}
