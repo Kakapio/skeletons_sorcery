@@ -8,9 +8,7 @@ public class LootDropPickup : MonoBehaviour
 {
     public string lootDrop;
     public Sprite lootDropSprite;
-
-    private float floatAmount = 0.0005f;
-    private float rotateSpeed = 8;
+    
     private bool pickedUp = false;
 
     private void OnTriggerEnter(Collider other)
