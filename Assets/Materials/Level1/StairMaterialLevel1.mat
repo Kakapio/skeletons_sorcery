@@ -7,12 +7,11 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: wall09b
+  m_Name: StairMaterialLevel1
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ValidKeywords:
   - _EMISSION
   - _NORMALMAP
-  - _PARALLAXMAP
   m_InvalidKeywords: []
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
@@ -24,14 +23,22 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: fb7364a89ab4a114a89a472f8a4c189e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1dc250aa6fd7d92439d64b4ba7748175, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Cube:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Detail:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailBump:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -45,54 +52,84 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 4}
+        m_Scale: {x: 0.05, y: 0.05}
+        m_Offset: {x: 0, y: 0}
+    - _HeightMap:
+        m_Texture: {fileID: 2800000, guid: 21c9e2e3ffe960a42a3a0e04749cfe3a, type: 3}
+        m_Scale: {x: 0.5, y: 0.5}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 987c676a3fac2524b871781701f8fbb8, type: 3}
-        m_Scale: {x: 1, y: 4}
+        m_Texture: {fileID: 2800000, guid: 04b77c194e789e54eb312abb43bf99b4, type: 3}
+        m_Scale: {x: 0.05, y: 0.05}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: 183cde0c690073347ba94ddd13edc9dd, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3d92c5b0fd4ef7e419f71a78a50d1072, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: eeb5023dec351b14dad732085a5642db, type: 3}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _mipFilterTex:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AlphaCutRange: 1
+    - _BINARY_STEPS: 6
     - _BumpScale: 1
     - _Cutoff: 0.5
+    - _DIST_STEPS: 20
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EmissionScaleUI: 0
+    - _ExtrudeHeight: 0.05
+    - _GlossFromBrightness_exponent: 8
+    - _GlossFromBrightness_multiplicator: 0.3333
     - _GlossMapScale: 1
-    - _Glossiness: 0.15
+    - _Glossiness: 0.225
     - _GlossyReflections: 1
+    - _LightmapShading: 0.7
     - _Metallic: 0
     - _Mode: 0
-    - _OcclusionStrength: 0.75
-    - _Parallax: 0.011716418
-    - _RMS: 0.6027336
+    - _OcclusionStrength: 0.5
+    - _Parallax: 0.010597015
+    - _RMS: 0.06595752
+    - _Rot: 0
+    - _SHADOW_SMOOTH_STEPS: 4
+    - _SHADOW_STEPS: 20
+    - _SelfShadowStrength: 0.32692307
     - _ShadeRange: 0.02
-    - _ShadingStrength: 0.14925373
-    - _Shininess: 0.75308096
+    - _ShadingStrength: 0
+    - _ShadowSmoothing: 1.9409615
+    - _Shininess: 0.61046314
+    - _SidewallTextureOffset: -1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
+    - _UseAlpha: 1
+    - _Volume2TangetSideDist: 0.01
+    - _Volume2TangetTopDist: 0.05
+    - _WAVELENGTH: 1
+    - _WAVELENGTH_SHADOWS: 8
     - _ZWrite: 1
+    - _distance_start: 10
+    - _distance_transition: 33.46154
     m_Colors:
-    - _Color: {r: 0.75373137, g: 0.75373137, b: 0.75373137, a: 1}
+    - _Color: {r: 0.1981132, g: 0.1981132, b: 0.1981132, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColorUI: {r: 1, g: 1, b: 1, a: 1}
     - _ReflectColor: {r: 1, g: 1, b: 1, a: 0.5}
-    - _SpecColor: {r: 0.6268657, g: 0.6268657, b: 0.6268657, a: 1}
+    - _ReliefTransform: {r: 1, g: 1, b: 0, a: 0}
+    - _SilhouetteUV_border: {r: 0, g: 1, b: 0, a: 1}
+    - _SpecColor: {r: 0.29104477, g: 0.29104477, b: 0.29104477, a: 1}
+    - _TangentToTexCurvatureScale: {r: 1, g: 1, b: 1, a: 1}
+    - _World2VolumeDepthMinMax: {r: 0, g: 1, b: 0, a: 0}
+    - _World2VolumeScale: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!1002 &2100001
-EditorExtensionImpl:
-  serializedVersion: 6
