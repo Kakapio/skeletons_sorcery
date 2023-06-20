@@ -14,6 +14,7 @@ TagManager:
   - PlayerBuff
   - Gate
   - Chest
+  - BossHealth
   layers:
   - Default
   - TransparentFX

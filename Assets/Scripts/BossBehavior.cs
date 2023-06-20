@@ -1,14 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 enum BossPhase
 {
     Melee,
     Summon,
-    Attack
+    Attack,
+    Dead
 }
 public class BossBehavior : MonoBehaviour
 {
@@ -32,14 +35,19 @@ public class BossBehavior : MonoBehaviour
     private bool attacking;
     private Animator anim;
     private bool bossActive = false;
+    private GameObject healthbar;
+    private MeshCollider meshCollider;
     
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+        meshCollider = GetComponent<MeshCollider>();
         agent.speed = chaseSpeed;
         playerTransform = GameObject.FindWithTag("Player").transform;
+        healthbar = GameObject.FindWithTag("BossHealth");
+        healthbar.SetActive(false);
     }
 
     // Update is called once per frame
@@ -50,6 +58,9 @@ public class BossBehavior : MonoBehaviour
         
         if (bossActive == false)
             return;
+
+        if (currentHealth <= 0)
+            bossPhase = BossPhase.Dead;
         
         switch (bossPhase)
         {
@@ -100,6 +111,11 @@ public class BossBehavior : MonoBehaviour
                     }
                 }
                 break;
+            
+            case BossPhase.Dead:
+                anim.SetFloat("Speed_f", 0f);
+                agent.speed = 0;
+                break;
         }
     }
 
@@ -113,6 +129,7 @@ public class BossBehavior : MonoBehaviour
         {
             bossActive = true;
             GameObject.FindWithTag("Gate").GetComponent<BoxCollider>().isTrigger = false;
+            healthbar.SetActive(true);
         }
     }
 
@@ -152,5 +169,14 @@ public class BossBehavior : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(directionToTarget);
         transform.rotation = Quaternion.Slerp(
             transform.rotation, lookRotation, bossRotationSpeed * Time.deltaTime);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Fireball"))
+        {
+            currentHealth -= 100;
+            healthbar.GetComponent<Slider>().value = currentHealth;
+        }
     }
 }
