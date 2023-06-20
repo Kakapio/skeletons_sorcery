@@ -37,7 +37,6 @@ public class ShootProjectile : MonoBehaviour
         PollWeaponSwap();
         HandleShoot();
         timeSinceLastShoot += Time.deltaTime;
-        Debug.Log(timeSinceLastShoot);
     }
 
     private void PollWeaponSwap()

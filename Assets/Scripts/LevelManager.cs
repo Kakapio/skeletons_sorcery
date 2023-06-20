@@ -19,6 +19,8 @@ public class LevelManager : MonoBehaviour
 
     public string nextLevel;
 
+    public static bool isGameOver = false;
+
     static int score = 0;
     string scoreInfo;
 
