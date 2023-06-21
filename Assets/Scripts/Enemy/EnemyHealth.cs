@@ -35,8 +35,4 @@ public class EnemyHealth : MonoBehaviour
             GetComponent<EnemyBehavior>().Dead();
         }
     }
-
-    private void OnTriggerEnter(Collider other) {
-        
-    }
 }

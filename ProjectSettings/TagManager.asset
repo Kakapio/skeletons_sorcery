@@ -14,10 +14,10 @@ TagManager:
   - PlayerBuff
   - Gate
   - Chest
-  - BossHealth
   - SpellIcon
   - ScoreInfoParent
   - Confirm
+  - Boss
   layers:
   - Default
   - TransparentFX

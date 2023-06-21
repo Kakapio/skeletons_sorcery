@@ -24,7 +24,7 @@ public class IcespearMagic : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") || alreadyHit)
+        if (other.gameObject.CompareTag("Player") || alreadyHit || other.gameObject.CompareTag("Gate"))
             return;
 
         alreadyHit = true;
@@ -33,6 +33,11 @@ public class IcespearMagic : MonoBehaviour
         {
             other.GetComponent<EnemyHealth>().TakeDamage(LevelManager.iceSpearDamage);
             other.GetComponent<EnemyBehavior>().Alert();
+        }
+
+        if(other.gameObject.CompareTag("Boss"))
+        {
+            other.GetComponent<BossBehavior>().TakeDamage(LevelManager.iceSpearDamage);
         }
 
         GameObject explosion = Instantiate(iceexplosionFX, transform.position, transform.rotation);

@@ -29,17 +29,20 @@ public class BossBehavior : MonoBehaviour
     public AudioClip hitSFX;
     public AudioClip attackSFX;
     public AudioClip summonSFX;
-    
+    public AudioClip deathSFX;
+    public int currentHealth = 1000;
+    public GameObject healthbar;
+
     private BossPhase bossPhase = BossPhase.Summon;
-    private int currentHealth = 1000;
     private NavMeshAgent agent;
     private Transform playerTransform;
     private float distanceToPlayer;
     private bool attacking;
     private Animator anim;
     private bool bossActive = false;
-    private GameObject healthbar;
+    private Slider healthSlider;
     private MeshCollider meshCollider;
+    bool isDead = false;
     
     // Start is called before the first frame update
     void Start()
@@ -49,8 +52,10 @@ public class BossBehavior : MonoBehaviour
         meshCollider = GetComponent<MeshCollider>();
         agent.speed = chaseSpeed;
         playerTransform = GameObject.FindWithTag("Player").transform;
-        healthbar = GameObject.FindWithTag("BossHealth");
         healthbar.SetActive(false);
+        healthSlider = healthbar.GetComponentInChildren<Slider>();
+        healthSlider.maxValue = currentHealth;
+        healthSlider.value = currentHealth;
         InvokeRepeating("SkullRangedAttack", skullAttackFrequency * 2, skullAttackFrequency);
     }
 
@@ -140,7 +145,7 @@ public class BossBehavior : MonoBehaviour
 
     private void CheckBossActivation()
     {
-        if (distanceToPlayer <= activateDistance)
+        if (distanceToPlayer <= activateDistance && !bossActive)
         {
             bossActive = true;
             GameObject.FindWithTag("Gate").GetComponent<BoxCollider>().isTrigger = false;
@@ -186,12 +191,41 @@ public class BossBehavior : MonoBehaviour
             transform.rotation, lookRotation, bossRotationSpeed * Time.deltaTime);
     }
 
-    private void OnCollisionEnter(Collision other)
+    public void TakeDamage(int damageAmount)
     {
-        if (other.gameObject.CompareTag("Fireball"))
+        if(currentHealth > 0)
         {
-            currentHealth -= 100;
-            healthbar.GetComponent<Slider>().value = currentHealth;
+            currentHealth -= damageAmount;
+            healthSlider.value = currentHealth;
+        }
+
+        if(currentHealth <= 0)
+        {
+            Dead();
+        }
+    }
+
+    void Dead()
+    {
+        if(!isDead)
+        {
+            healthbar.SetActive(false);
+            
+            FindObjectOfType<LevelManager>().UpdateScore(50, "Boss Killed");
+
+            isDead = true;
+            agent.SetDestination(transform.position);
+            agent.speed = 0f;
+
+            anim.SetInteger("MeleeType_int", -1);
+            anim.SetFloat("Speed_f", 0f);
+
+            anim.SetInteger("DeathType_int", 1);
+            anim.SetBool("Death_b", true);
+
+            //AudioSource.PlayClipAtPoint(deathSFX, transform.position);
+
+            FindObjectOfType<LevelManager>().LevelBeat();
         }
     }
 }

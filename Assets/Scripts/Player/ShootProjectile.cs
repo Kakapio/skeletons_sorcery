@@ -245,7 +245,7 @@ public class ShootProjectile : MonoBehaviour
         }
         else
         {
-            mouseWorldPosition = Camera.main.transform.position + Camera.main.transform.forward * 20;
+            mouseWorldPosition = Camera.main.transform.position + Camera.main.transform.forward * 100;
         }
 
         return shotPosition;

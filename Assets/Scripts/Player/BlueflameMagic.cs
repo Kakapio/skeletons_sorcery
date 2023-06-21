@@ -24,7 +24,7 @@ public class BlueflameMagic : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") || alreadyHit)
+        if (other.gameObject.CompareTag("Player") || alreadyHit || other.gameObject.CompareTag("Gate"))
             return;
         
         alreadyHit = true;
@@ -33,6 +33,11 @@ public class BlueflameMagic : MonoBehaviour
         {
             other.GetComponent<EnemyHealth>().TakeDamage(LevelManager.blueFireballDamage);
             other.GetComponent<EnemyBehavior>().Alert();
+        }
+
+        if(other.gameObject.CompareTag("Boss"))
+        {
+            other.GetComponent<BossBehavior>().TakeDamage(LevelManager.blueFireballDamage);
         }
 
         GameObject explosion = Instantiate(explosionFX, transform.position, transform.rotation);
