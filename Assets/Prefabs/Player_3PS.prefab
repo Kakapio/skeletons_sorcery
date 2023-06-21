@@ -890,12 +890,17 @@ MonoBehaviour:
   fireballPrefab: {fileID: 8680271039583177988, guid: 5792ff608e9659242965be2c85e0c7ca, type: 3}
   bluefireballPrefab: {fileID: 8680271039583177988, guid: 9a8b5c773c6e37e42901942e48af417b, type: 3}
   icespearPrefab: {fileID: 4783090058030970878, guid: 65ae0a06b26a26b4ea4d1376f1c744f4, type: 3}
-  venomBombPrefab: {fileID: 0}
+  venomBombPrefab: {fileID: 8680271039583177988, guid: 9a8b5c773c6e37e42901942e48af417b, type: 3}
   projectileSpeed: 50
   projectileSFX: {fileID: 8300000, guid: b0c2d442ba6c1164f8cce5f73fd42fac, type: 3}
   fireballCooldown: 0.7
-  icespearCooldown: 1
+  iceSpearCooldown: 1
   venomBombCooldown: 5
+  spellUI: {fileID: 0}
+  baseSpellIconSize: {x: 0.8, y: 0.8, z: 1}
+  fireballSlider: {fileID: 0}
+  iceSpearSlider: {fileID: 0}
+  venomBombSlider: {fileID: 0}
 --- !u!114 &1049544165082102180
 MonoBehaviour:
   m_ObjectHideFlags: 0

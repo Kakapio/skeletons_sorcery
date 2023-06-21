@@ -61,7 +61,6 @@ public class ShootProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(fireballTimer + "A" + fireballCooldown);
         PollWeaponSwap();
         HandleShoot();
         UpdateCooldowns();

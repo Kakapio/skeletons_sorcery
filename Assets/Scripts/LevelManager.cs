@@ -149,7 +149,7 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            gameText.text = "You beat the stage!\n(More and better stages\ncoming soon)";
+            gameText.text = "You beat the game!";
         }
     }
 
