@@ -67,9 +67,6 @@ public class BossBehavior : MonoBehaviour
         if (bossActive == false)
             return;
 
-        if (currentHealth <= 0)
-            bossPhase = BossPhase.Dead;
-        
         switch (bossPhase)
         {
             case BossPhase.Melee:
@@ -191,6 +188,7 @@ public class BossBehavior : MonoBehaviour
             transform.rotation, lookRotation, bossRotationSpeed * Time.deltaTime);
     }
 
+<<<<<<< Updated upstream
     public void TakeDamage(int damageAmount)
     {
         if(currentHealth > 0)
@@ -227,5 +225,13 @@ public class BossBehavior : MonoBehaviour
 
             FindObjectOfType<LevelManager>().LevelBeat();
         }
+=======
+    public void DealDamage(int amount)
+    {
+        currentHealth -= amount;
+        if (currentHealth <= 0)
+            bossPhase = BossPhase.Dead;
+        healthbar.GetComponent<Slider>().value = currentHealth;
+>>>>>>> Stashed changes
     }
 }

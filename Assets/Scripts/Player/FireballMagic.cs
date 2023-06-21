@@ -34,6 +34,10 @@ public class FireballMagic : MonoBehaviour
             other.GetComponent<EnemyHealth>().TakeDamage(LevelManager.fireballDamage);
             other.GetComponent<EnemyBehavior>().Alert();
         }
+        if (other.gameObject.CompareTag("Boss"))
+        {
+            other.GetComponent<BossBehavior>().DealDamage(LevelManager.fireballDamage);
+        }
 
         if(other.gameObject.CompareTag("Boss"))
         {
