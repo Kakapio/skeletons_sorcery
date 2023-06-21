@@ -17,6 +17,7 @@ TagManager:
   - BossHealth
   - SpellIcon
   - ScoreInfoParent
+  - Confirm
   layers:
   - Default
   - TransparentFX

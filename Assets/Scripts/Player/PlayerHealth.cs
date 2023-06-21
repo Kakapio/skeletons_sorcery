@@ -10,13 +10,22 @@ public class PlayerHealth : MonoBehaviour
 
     public static bool isPlayerDead;
 
-    static int currentHealth;
+    public static int currentHealth;
+    public static int storedHealth = 100;
     Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = maxHealth;
+        if(PlayerPrefs.GetInt("difficulty", 0) == 0)
+        {
+            currentHealth = maxHealth;
+        }
+        else
+        {
+            currentHealth = storedHealth;
+        }
+
         healthSlider.maxValue = maxHealth;
         healthSlider.value = currentHealth;
 
@@ -27,18 +36,21 @@ public class PlayerHealth : MonoBehaviour
 
     public void Damage(int damageAmount)
     {
-        if(currentHealth > 0)
+        if(!isPlayerDead)
         {
-            currentHealth -= damageAmount;
-            healthSlider.value = currentHealth;
-        }
+            if(currentHealth > 0)
+            {
+                currentHealth -= damageAmount;
+                healthSlider.value = currentHealth;
+            }
 
-        if(currentHealth <= 0)
-        {
-            PlayerDies();
-        }
+            if(currentHealth <= 0)
+            {
+                PlayerDies();
+            }
 
-        Debug.Log("Current health: " + currentHealth);
+            Debug.Log("Current health: " + currentHealth);
+        }
     }
 
     public void Heal(int healAmount)
@@ -53,6 +65,7 @@ public class PlayerHealth : MonoBehaviour
     {
         //AudioSource.PlayClipAtPoint(deadSFX, transform.position);
         isPlayerDead = true;
+        currentHealth = storedHealth;
         anim.SetInteger("Dead", Random.Range(1,3));
         FindObjectOfType<LevelManager>().LevelLost();
     }

@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int startingHealth = 50;
-    public int currentHealth;
+    public float startingHealth = 50;
+    public float currentHealth;
     public Slider healthSlider;
 
     void Awake()
@@ -16,6 +16,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Start()
     {
+        startingHealth = startingHealth * (0.8f + 0.2f * PlayerPrefs.GetInt("difficulty", 0));
         currentHealth = startingHealth;
         healthSlider.maxValue = startingHealth;
         healthSlider.value = currentHealth;

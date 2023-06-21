@@ -11,7 +11,7 @@ public class InteractionBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!LevelManager.isGameOver)
+        if(!PlayerHealth.isPlayerDead)
         {
             RaycastHit hit;
 

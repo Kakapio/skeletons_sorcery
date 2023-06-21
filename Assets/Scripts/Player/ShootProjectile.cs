@@ -44,7 +44,7 @@ public class ShootProjectile : MonoBehaviour
         projectiles = new [] {PlayerProjectile.Fireball, PlayerProjectile.Icespear, PlayerProjectile.Venombomb};
 
         buttons = spellUI.GetComponentsInChildren<Button>();
-        UIIndex = 0;
+        UIIndex = PlayerPrefs.GetInt("spellIndex", 0);
         ChangeSpell();
 
         fireballSlider.SetActive(false);
@@ -61,9 +61,12 @@ public class ShootProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PollWeaponSwap();
-        HandleShoot();
-        UpdateCooldowns();
+        if(!PauseMenuBehavior.isGamePaused)
+        {
+            PollWeaponSwap();
+            HandleShoot();
+            UpdateCooldowns();
+        }
     }
 
     void UpdateCooldowns()
@@ -150,6 +153,7 @@ public class ShootProjectile : MonoBehaviour
             i++;
         }
 
+        PlayerPrefs.SetInt("spellIndex", UIIndex);
         playerProjectile = projectiles[UIIndex];
     }
 

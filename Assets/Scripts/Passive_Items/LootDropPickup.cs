@@ -8,7 +8,7 @@ public class LootDropPickup : MonoBehaviour
 {
     public string lootDrop;
     public Sprite lootDropSprite;
-    
+
     private bool pickedUp = false;
 
     private void OnTriggerEnter(Collider other)
@@ -36,12 +36,44 @@ public class LootDropPickup : MonoBehaviour
                     throw new Exception("Invalid loot drop name provided.");
             }
             
-            other.GetComponent<PlayerItems>().GiveItem(lootDropData);
+            var playerItems = other.GetComponent<PlayerItems>();
+            if(!playerItems.HasItem(lootDrop))
+            {
+                PickupMessage(lootDrop);
+            }
+            playerItems.GiveItem(lootDropData);
             FindObjectOfType<LevelManager>().UpdateScore(2, "Loot Picked Up");
             FindObjectOfType<LootCount>().UpdateLootCounts();
+
             Debug.Log($"Gave player {lootDrop} powers");
             
             Destroy(gameObject);
         }
+    }
+
+    void PickupMessage(string lootDrop)
+    {
+        string message;
+
+        switch(lootDrop)
+        {
+            case "VampireSoul":
+                message = "You found a Vampire Soul.\nVampire Souls heal you on kill";
+                break;
+            case "ExampleLoot":
+                message = "You found Gold.\nGold gives you score";
+                break;
+            case "CuckooFeather":
+                message = "You found a Cuckoo Feather.\nThese increase your jump height";
+                break;
+            case "Blueflame":
+                message = "You found a Blueflame.\nBlueflames increase your damage";
+                break;
+            default:
+                message = "invalid loot drop";
+                break;
+        }
+
+        FindObjectOfType<LevelManager>().UpdateGameInfo(message, Color.white);
     }
 }

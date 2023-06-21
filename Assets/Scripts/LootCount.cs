@@ -16,7 +16,6 @@ public class LootCount : MonoBehaviour
     {
         List<LootDropData> items = PlayerItems.items;
         int num = 0;
-
         foreach(LootDropData item in items)
         {
             GameObject icon = Instantiate(LootUI, transform.position, transform.rotation);

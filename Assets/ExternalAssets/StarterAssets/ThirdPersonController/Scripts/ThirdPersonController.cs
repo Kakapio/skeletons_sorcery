@@ -15,6 +15,8 @@ namespace StarterAssets
     public class ThirdPersonController : MonoBehaviour
     {
         [Header("Player")]
+        public float defaultSensitivity = 1f;
+
         [Tooltip("Move speed of the character in m/s")]
         public float MoveSpeed = 2.0f;
 
@@ -90,6 +92,7 @@ namespace StarterAssets
         // timeout deltatime
         private float _jumpTimeoutDelta;
         private float _fallTimeoutDelta;
+        private static float sensitivity;
 
         // animation IDs
         private int _animIDSpeed;
@@ -134,6 +137,8 @@ namespace StarterAssets
 
         private void Start()
         {
+            UpdateSensitivity();
+
             _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
             
             _hasAnimator = TryGetComponent(out _animator);
@@ -161,9 +166,17 @@ namespace StarterAssets
             Move();
         }
 
+        public void UpdateSensitivity()
+        {
+            sensitivity = defaultSensitivity * PlayerPrefs.GetFloat("sensitivitySetting", 1f);
+        }
+
         private void LateUpdate()
         {
-            CameraRotation();
+            if(!PauseMenuBehavior.isGamePaused)
+            {
+                CameraRotation();
+            }
         }
 
         private void AssignAnimationIDs()
@@ -198,8 +211,8 @@ namespace StarterAssets
                 //Don't multiply mouse input by Time.deltaTime;
                 float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
 
-                _cinemachineTargetYaw += _input.look.x * deltaTimeMultiplier;
-                _cinemachineTargetPitch += _input.look.y * deltaTimeMultiplier;
+                _cinemachineTargetYaw += _input.look.x * deltaTimeMultiplier * sensitivity;
+                _cinemachineTargetPitch += _input.look.y * deltaTimeMultiplier * sensitivity;
             }
 
             // clamp our rotations so our values are limited 360 degrees

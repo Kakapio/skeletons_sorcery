@@ -12,7 +12,7 @@ public class LevelManager : MonoBehaviour
     public static int blueFireballDamage = (int)(fireballDamage * 1.2f); // 20% more damage than base
     public static int iceSpearDamage = 40;
     
-    public Text gameText;
+    public GameObject gameInfo;
     public TMP_Text scoreText;
     public TMP_Text stageText;
     public TMP_Text timerText;
@@ -23,42 +23,58 @@ public class LevelManager : MonoBehaviour
 
     public string nextLevel;
 
-    public static bool isGameOver = false;
+    //public static bool isGameOver = false;
+    public static float timer = 0f;
+    public static int score = 0;
 
-    static int score = 0;
-    static float timer = 0f;
+    static int savedScore;
     List<GameObject> scoreInfoObjects = new List<GameObject>();
     GameObject scoreInfoParent;
+    TMP_Text gameText;
+    float gameTextTimer = 0;
+    
 
     void Start()
     {
+        gameText = gameInfo.GetComponentInChildren<TMP_Text>();
+        gameInfo.SetActive(false);
         SetStartText();
         SetTimerText();
-        gameText.gameObject.SetActive(true);
-        Invoke("RemoveGameText", 3);
         scoreInfoParent = GameObject.FindGameObjectWithTag("ScoreInfoParent");
+        Time.timeScale = 1f;
+        savedScore = score;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!isGameOver)
+        if(!PlayerHealth.isPlayerDead)
         {
             timer += Time.deltaTime;
             SetTimerText();
         }
+
+        if(gameTextTimer < 0)
+            gameInfo.SetActive(false);
+        else
+            gameTextTimer -= Time.deltaTime;
     }
 
     void SetTimerText()
     {
+        timerText.text = ConvertTime(timer);
+    }
+
+    string ConvertTime(float timer)
+    {
         TimeSpan time = TimeSpan.FromSeconds(timer);
         if(timer >= 3600)
         {
-            timerText.text = time.ToString(@"%h\:mm\:ss");
+           return time.ToString(@"%h\:mm\:ss");
         } 
         else
         {
-            timerText.text = time.ToString(@"%m\:ss");
+            return time.ToString(@"%m\:ss");
         }
     }
 
@@ -74,25 +90,13 @@ public class LevelManager : MonoBehaviour
         {
             stageText.text = "Stage: " + SceneManager.GetActiveScene().buildIndex.ToString();
         }
+
         if(levelName == "Stage0")
         {
-            gameText.text = "Enter the portal\nto start the game";
-        }
-        else if (levelName == "StageEnd")
-        {
-            gameText.text = "You have completed the game in it's\ncurrent state\nenter the portal to restart the game";
-        }
-        else
-        {
-            gameText.text = "Reach the portal\nto continue";
+            UpdateGameInfo("Reach the portal to progress", Color.white);
         }
 
         scoreText.text = "Score: " + score;
-    }
-
-    void RemoveGameText()
-    {
-        gameText.gameObject.SetActive(false);
     }
 
     public void UpdateScore(int value, string reason)
@@ -126,31 +130,58 @@ public class LevelManager : MonoBehaviour
 
     public void LevelLost()
     {
-        gameText.text = "YOU DIED.";
+        if(PlayerPrefs.GetInt("difficulty", 0) == 2)
+        {
+            UpdateGameInfo("Game Over", Color.red);
+            Invoke("LoadMainMenu", 3);
+        }
+        else
+        {
+            UpdateGameInfo("You died... respawning", Color.red);
+            Invoke("LoadCurrentLevel", 2);
+        }
+
         gameText.gameObject.SetActive(true);
 
         //Camera.main.GetComponent<AudioSource>().pitch = 1;
         //AudioSource.PlayClipAtPoint(gameOverSFX, Camera.main.transform.position);
-
-        Invoke("LoadCurrentLevel", 2);
     }
 
     public void LevelBeat()
     {
-        gameText.text = "You beat the stage!\nTeleporting you...";
-        gameText.gameObject.SetActive(true);
+        UpdateGameInfo("Teleporting...", Color.cyan);
 
+        PlayerHealth.storedHealth = PlayerHealth.currentHealth;
         //Camera.main.GetComponent<AudioSource>().pitch = 2;
         //AudioSource.PlayClipAtPoint(gameWonSFX, Camera.main.transform.position);
 
         if(!string.IsNullOrEmpty(nextLevel))
         {
-            Invoke("LoadNextLevel", 2);
+            Invoke("LoadNextLevel", 1);
         }
         else
         {
-            gameText.text = "You beat the game!";
+            UpdateGameInfo("YOU WIN!\nScore: " + score + "\tTime: " + ConvertTime(timer), Color.white, 5f);
+
+            if(score > PlayerPrefs.GetInt("highScore", -1))
+            {
+                PlayerPrefs.SetInt("highScore", score);
+            }
+            if(timer < PlayerPrefs.GetFloat("fastestTime", Mathf.Infinity))
+            {
+                PlayerPrefs.SetFloat("fastestTime", timer);
+            }
+            
+            Invoke("LoadMainMenu", 5);
         }
+    }
+
+    public void UpdateGameInfo(string text, Color color, float duration = 3f)
+    {
+        gameInfo.SetActive(true);
+        gameText.text = text;
+        gameText.color = color;
+        gameTextTimer = duration;
     }
 
     void LoadNextLevel()
@@ -160,6 +191,17 @@ public class LevelManager : MonoBehaviour
 
     void LoadCurrentLevel()
     {
+        PlayerItems.items = new List<LootDropData>(PlayerItems.savedItems);
+        score = savedScore;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    void LoadMainMenu()
+    {
+        PlayerPrefs.SetFloat("timePlaying", PlayerPrefs.GetFloat("timePlaying", 0f) + timer);
+        SceneManager.LoadScene(0);
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

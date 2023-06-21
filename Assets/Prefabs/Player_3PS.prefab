@@ -695,6 +695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e54e5a728a9234ab24fcf1460ed8a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultSensitivity: 1
   MoveSpeed: 2
   SprintSpeed: 7
   RotationSmoothTime: 0.12
@@ -6499,7 +6500,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5070540059817731262
 Transform:
   m_ObjectHideFlags: 0

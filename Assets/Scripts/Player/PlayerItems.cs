@@ -5,7 +5,12 @@ using UnityEngine;
 public class PlayerItems : MonoBehaviour
 {
     public static List<LootDropData> items = new List<LootDropData>();
-    
+    public static List<LootDropData> savedItems = new List<LootDropData>();
+
+    void Start() {
+        savedItems = new List<LootDropData>(PlayerItems.items);
+    }
+
     /// <summary>
     /// Give the player a given item.
     /// </summary>

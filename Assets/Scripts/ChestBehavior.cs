@@ -7,7 +7,7 @@ public class ChestBehavior : MonoBehaviour
 {
     public GameObject[] possibleLoot;
     public AudioClip openSFX;
-    public Text chestText;
+    public GameObject chestText;
 
     Transform player;
     Transform cameraTransform;
@@ -17,7 +17,7 @@ public class ChestBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        chestText.gameObject.SetActive(false);
+        chestText.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player").transform;
         cameraTransform = Camera.main.transform;
         anim = GetComponentInChildren<Animator>();
@@ -28,8 +28,7 @@ public class ChestBehavior : MonoBehaviour
     {
         if(!open)
         {
-            chestText.gameObject.SetActive(true);
-            chestText.text = "Press \"E\"\nto open chest";
+            chestText.SetActive(true);
         }
     }
 
