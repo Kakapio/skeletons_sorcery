@@ -8,9 +8,9 @@ using System;
 
 public class LevelManager : MonoBehaviour
 {
-    public static int fireballDamage = 8;
+    public static int fireballDamage = 20;
     public static int blueFireballDamage = (int)(fireballDamage * 1.2f); // 20% more damage than base
-    public static int iceSpearDamage = 13;
+    public static int iceSpearDamage = 40;
     
     public Text gameText;
     public TMP_Text scoreText;
