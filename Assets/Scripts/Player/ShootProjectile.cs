@@ -21,34 +21,137 @@ public class ShootProjectile : MonoBehaviour
     public float projectileSpeed = 50;
     public AudioClip projectileSFX;
     public float fireballCooldown = 0.7f;
-    public float icespearCooldown = 1f;
+    public float iceSpearCooldown = 1f;
     public float venomBombCooldown = 5f;
-
+    public GameObject spellUI;
+    public Vector3 baseSpellIconSize = new Vector3(0.8f, 0.8f, 1);
+    public GameObject fireballSlider;
+    public GameObject iceSpearSlider;
+    public GameObject venomBombSlider;
+    
     Animator anim;
+    PlayerProjectile[] projectiles;
     PlayerProjectile playerProjectile = PlayerProjectile.Fireball;
-    float timeSinceLastShoot;
+    float fireballTimer;
+    float iceSpearTimer;
+    float venomBombTimer;
+    Button[] buttons;
+    int UIIndex;
 
     void Start()
     {
         anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+        projectiles = new [] {PlayerProjectile.Fireball, PlayerProjectile.Icespear, PlayerProjectile.Venombomb};
+
+        buttons = spellUI.GetComponentsInChildren<Button>();
+        UIIndex = 0;
+        ChangeSpell();
+
+        fireballSlider.SetActive(false);
+        fireballSlider.GetComponentInChildren<Slider>().maxValue = fireballCooldown;
+        fireballTimer = fireballCooldown;
+        iceSpearSlider.SetActive(false);
+        iceSpearSlider.GetComponentInChildren<Slider>().maxValue = iceSpearCooldown;
+        iceSpearTimer = iceSpearCooldown;
+        venomBombSlider.SetActive(false);
+        venomBombSlider.GetComponentInChildren<Slider>().maxValue = venomBombCooldown;
+        venomBombTimer = venomBombCooldown;
     }
 
     // Update is called once per frame
     void Update()
     {
+        print(fireballTimer + "A" + fireballCooldown);
         PollWeaponSwap();
         HandleShoot();
-        timeSinceLastShoot += Time.deltaTime;
+        UpdateCooldowns();
+    }
+
+    void UpdateCooldowns()
+    {
+        fireballTimer += Time.deltaTime;
+        iceSpearTimer += Time.deltaTime;
+        venomBombTimer += Time.deltaTime;
+        
+        UpdateSpellCooldown(fireballSlider, fireballTimer, fireballCooldown);
+        UpdateSpellCooldown(iceSpearSlider, iceSpearTimer, iceSpearCooldown);
+        UpdateSpellCooldown(venomBombSlider, venomBombTimer, venomBombCooldown);
+    }
+
+    void UpdateSpellCooldown(GameObject slider, float timer, float cooldown)
+    {
+        if(timer > cooldown)
+            slider.SetActive(false);
+        else
+            slider.GetComponentInChildren<Slider>().value = timer;
     }
 
     private void PollWeaponSwap()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        int currentUIIndex = UIIndex;
+
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
             playerProjectile = PlayerProjectile.Fireball;
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+            UIIndex = 0;
+        }
+        else if(Input.GetKeyDown(KeyCode.Alpha2))
+        {
             playerProjectile = PlayerProjectile.Icespear;
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
+            UIIndex = 1;
+        }
+        else if(Input.GetKeyDown(KeyCode.Alpha3))
+        {
             playerProjectile = PlayerProjectile.Venombomb;
+            UIIndex = 2;
+        }
+        else if(Input.GetAxis("Mouse ScrollWheel") < 0)
+        {
+            if(UIIndex >= buttons.Length - 1)
+            {
+                UIIndex = 0;
+            }
+            else
+            {
+                UIIndex++;
+            }
+        }
+        else if(Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            if(UIIndex <= 0)
+            {
+                UIIndex = buttons.Length - 1;
+            }
+            else
+            {
+                UIIndex--;
+            }
+        }
+        if(currentUIIndex != UIIndex)
+        {
+            ChangeSpell();
+        }
+    }
+
+    void ChangeSpell()
+    {
+        int i = 0;
+
+        foreach (Button spellIcon in buttons)
+        {
+            if(i == UIIndex)
+            {
+                spellIcon.transform.localScale *= 1.25f;
+            }
+            else
+            {
+                spellIcon.transform.localScale = baseSpellIconSize;
+            }
+
+            i++;
+        }
+
+        playerProjectile = projectiles[UIIndex];
     }
 
     private void HandleShoot()
@@ -57,7 +160,7 @@ public class ShootProjectile : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1") && CooldownMet())
         {
-            timeSinceLastShoot = 0;
+            SetCooldownTimer();
             
             anim.SetInteger("Attack", UnityEngine.Random.Range(1, 3));
             Invoke("AttackDelay", 0.15f);
@@ -92,11 +195,35 @@ public class ShootProjectile : MonoBehaviour
         switch (playerProjectile)
         {
             case PlayerProjectile.Fireball:
-                return timeSinceLastShoot >= fireballCooldown;
+                return fireballTimer >= fireballCooldown;
             case PlayerProjectile.Icespear:
-                return timeSinceLastShoot >= icespearCooldown;
+                return iceSpearTimer >= iceSpearCooldown;
             case PlayerProjectile.Venombomb:
-                return timeSinceLastShoot >= venomBombCooldown;
+                return venomBombTimer >= venomBombCooldown;
+            default:
+                throw new Exception("Unsupported weapon projectile used.");
+        }
+    }
+
+    void SetCooldownTimer()
+    {
+        switch (playerProjectile)
+        {
+            case PlayerProjectile.Fireball:
+                fireballSlider.SetActive(true);
+                fireballTimer = 0;
+                fireballSlider.GetComponentInChildren<Slider>().value = fireballTimer;
+                break;
+            case PlayerProjectile.Icespear:
+                iceSpearSlider.SetActive(true);
+                iceSpearTimer = 0;
+                iceSpearSlider.GetComponentInChildren<Slider>().value = iceSpearTimer;
+                break;
+            case PlayerProjectile.Venombomb:
+                venomBombSlider.SetActive(true);
+                venomBombTimer = 0;
+                venomBombSlider.GetComponentInChildren<Slider>().value = venomBombTimer;
+                break;
             default:
                 throw new Exception("Unsupported weapon projectile used.");
         }

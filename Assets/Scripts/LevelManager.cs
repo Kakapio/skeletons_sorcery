@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
+using System;
 
 public class LevelManager : MonoBehaviour
 {
@@ -11,8 +13,10 @@ public class LevelManager : MonoBehaviour
     public static int iceSpearDamage = 13;
     
     public Text gameText;
-    public Text scoreText;
-    public Text scoreInfoText;
+    public TMP_Text scoreText;
+    public TMP_Text stageText;
+    public TMP_Text timerText;
+    public GameObject scoreInfoPrefab;
 
     //public AudioClip gameOverSFX;
     //public AudioClip gameWonSFX;
@@ -22,25 +26,54 @@ public class LevelManager : MonoBehaviour
     public static bool isGameOver = false;
 
     static int score = 0;
-    string scoreInfo;
+    static float timer = 0f;
+    List<GameObject> scoreInfoObjects = new List<GameObject>();
+    GameObject scoreInfoParent;
 
     void Start()
     {
         SetStartText();
+        SetTimerText();
         gameText.gameObject.SetActive(true);
         Invoke("RemoveGameText", 3);
+        scoreInfoParent = GameObject.FindGameObjectWithTag("ScoreInfoParent");
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(!isGameOver)
+        {
+            timer += Time.deltaTime;
+            SetTimerText();
+        }
+    }
 
+    void SetTimerText()
+    {
+        TimeSpan time = TimeSpan.FromSeconds(timer);
+        if(timer >= 3600)
+        {
+            timerText.text = time.ToString(@"%h\:mm\:ss");
+        } 
+        else
+        {
+            timerText.text = time.ToString(@"%m\:ss");
+        }
     }
 
     void SetStartText()
     {
         string levelName = SceneManager.GetActiveScene().name;
 
+        if(levelName == "StageEnd")
+        {
+            stageText.text = "Stage: Boss";
+        }
+        else
+        {
+            stageText.text = "Stage: " + SceneManager.GetActiveScene().buildIndex.ToString();
+        }
         if(levelName == "Stage0")
         {
             gameText.text = "Enter the portal\nto start the game";
@@ -55,45 +88,40 @@ public class LevelManager : MonoBehaviour
         }
 
         scoreText.text = "Score: " + score;
-        scoreInfo = "";
-        scoreInfoText.text = scoreInfo;
     }
+
     void RemoveGameText()
     {
         gameText.gameObject.SetActive(false);
-    }
-
-    public void ChestFound()
-    {
-        gameText.text = "";
-        gameText.gameObject.SetActive(true);
-        UpdateScore(5, "Chest Found");
-        Invoke("RemoveGameText", 3);
     }
 
     public void UpdateScore(int value, string reason)
     {
         score += value;
         scoreText.text = "Score: " + score;
-        string info = "+" + value + " " + reason + "\n";
-        scoreInfo += info;
-        scoreInfoText.text = scoreInfo;
-        Invoke("UpdateScoreInfo", 2);
+        string message = "+" + value + " " + reason;
+        
+
+        GameObject info = Instantiate(scoreInfoPrefab, transform.position, transform.rotation);
+        info.transform.SetParent(scoreInfoParent.transform);
+        info.transform.localScale = new Vector3(1, 1, 1);
+        info.transform.localPosition = new Vector3(0, -40 * scoreInfoObjects.Count, 0);
+        info.GetComponentInChildren<TMP_Text>().text = message;
+        scoreInfoObjects.Add(info);
+        
+        Invoke("RemoveScoreInfo", 2);
     }
 
-    public void UpdateScoreInfo()
+    public void RemoveScoreInfo()
     {
-        int index = scoreInfo.IndexOf("\n");
+        GameObject info = scoreInfoObjects[0];
+        scoreInfoObjects.Remove(info);
+        Destroy(info);
         
-        if(index >= scoreInfo.Length)
+        foreach(GameObject element in scoreInfoObjects)
         {
-            scoreInfo = "";
+            element.transform.localPosition = element.transform.localPosition + new Vector3(0, 40, 0);
         }
-        else
-        {
-            scoreInfo = scoreInfo[(index + 1)..];
-        }
-        scoreInfoText.text = scoreInfo;
     }
 
     public void LevelLost()

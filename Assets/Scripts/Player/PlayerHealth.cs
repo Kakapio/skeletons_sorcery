@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxHealth;
+    public int maxHealth = 100;
     public Slider healthSlider;
 
     public static bool isPlayerDead;
 
-    int currentHealth;
+    static int currentHealth;
     Animator anim;
 
     // Start is called before the first frame update

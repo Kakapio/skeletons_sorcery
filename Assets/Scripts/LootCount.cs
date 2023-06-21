@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class LootCount : MonoBehaviour
 {
-    public GameObject LootImage;
+    public GameObject LootUI;
 
     void Start()
     {
@@ -19,12 +19,12 @@ public class LootCount : MonoBehaviour
 
         foreach(LootDropData item in items)
         {
-            GameObject image = Instantiate(LootImage, transform.position, transform.rotation);
-            image.transform.SetParent(transform);
-            image.transform.localScale = new Vector3(1,1,1);
-            image.transform.localPosition = new Vector3(-100 * num, 0, 0);
-            image.GetComponent<Image>().sprite = item.Sprite;
-            image.GetComponentInChildren<Text>().text = item.Count.ToString();
+            GameObject icon = Instantiate(LootUI, transform.position, transform.rotation);
+            icon.transform.SetParent(transform);
+            icon.transform.localScale = new Vector3(0.8f, 0.8f, 1);
+            icon.transform.localPosition = new Vector3(-120 * num, 0, 0);
+            icon.GetComponentInChildren<Button>().gameObject.GetComponent<Image>().sprite = item.Sprite;
+            icon.GetComponentInChildren<Text>().text = item.Count.ToString();
             num++;
         }
     }

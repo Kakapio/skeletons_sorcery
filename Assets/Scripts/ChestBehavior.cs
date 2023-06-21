@@ -40,12 +40,15 @@ public class ChestBehavior : MonoBehaviour
 
     public void OpenChest()
     {
-        open = true;
-        RemoveText();
-        FindObjectOfType<LevelManager>().ChestFound();
-        anim.SetTrigger("openChest");
-        AudioSource.PlayClipAtPoint(openSFX, transform.position);
-        Invoke("SpawnLoot", 0.5f);
+        if(!open)
+        {
+            open = true;
+            RemoveText();
+            FindObjectOfType<LevelManager>().UpdateScore(5, "Chest Found");
+            anim.SetTrigger("openChest");
+            AudioSource.PlayClipAtPoint(openSFX, transform.position);
+            Invoke("SpawnLoot", 0.5f);
+        }
     }
 
     void SpawnLoot()

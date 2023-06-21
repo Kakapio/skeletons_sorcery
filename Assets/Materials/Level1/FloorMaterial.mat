@@ -92,10 +92,10 @@ Material:
     - _GlossFromBrightness_exponent: 8
     - _GlossFromBrightness_multiplicator: 0.3333
     - _GlossMapScale: 1
-    - _Glossiness: 0.46
+    - _Glossiness: 0
     - _GlossyReflections: 1
     - _LightmapShading: 0.7
-    - _Metallic: 0.784
+    - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 0.5
     - _Parallax: 0.010597015
