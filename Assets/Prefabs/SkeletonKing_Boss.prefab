@@ -1033,7 +1033,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!114 &1639755322
 MonoBehaviour:
@@ -1572,7 +1572,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300072, guid: 34d530461bec694428ff689cbae8692d, type: 3}
 --- !u!23 &5424021401512940412
@@ -1633,7 +1633,7 @@ MonoBehaviour:
   activateDistance: 80
   damageAmount: 10
   attackRange: 3
-  chaseSpeed: 4
+  chaseSpeed: 5
   summonFrequency: 60
   skullAttackFrequency: 15
   enemySummon: {fileID: 5296952360472626388, guid: ed84e67cfe4d278458f0094b598a2f58, type: 3}
@@ -1641,11 +1641,11 @@ MonoBehaviour:
   summonLocations:
   - {fileID: 2017773200}
   - {fileID: 1130462627}
-  hitSFX: {fileID: 0}
-  attackSFX: {fileID: 0}
-  summonSFX: {fileID: 0}
-  deathSFX: {fileID: 0}
-  currentHealth: 1000
+  hitSFX: {fileID: 8300000, guid: 03cc4f89ae1e3884dbcde8fa754a204e, type: 3}
+  attackSFX: {fileID: 8300000, guid: b88737e4a5b86bc428acf5e2ac641247, type: 3}
+  summonSFX: {fileID: 8300000, guid: 1272089ad7cad224da9ba9eb1d96abb2, type: 3}
+  deathSFX: {fileID: 8300000, guid: cb44db79cb34a334f8bdaed1c47bb543, type: 3}
+  currentHealth: 10
   healthbar: {fileID: 1639755320}
 --- !u!195 &136379677660848939
 NavMeshAgent:

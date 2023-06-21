@@ -134,6 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lootDrop: ExampleLoot
   lootDropSprite: {fileID: 21300000, guid: d00a030ed29315b44b318a368fae4259, type: 3}
+  pickupSFX: {fileID: 8300000, guid: 7a3d0acce818b5f4f8f203b17e7ee26b, type: 3}
 --- !u!1 &6134308729960725786
 GameObject:
   m_ObjectHideFlags: 0

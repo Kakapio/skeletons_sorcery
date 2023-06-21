@@ -4,22 +4,24 @@ using UnityEngine;
 
 public class PortalBehavior : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject teleportParticles;
+    public AudioClip teleportSFX;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    public static bool teleporting = false;
+    
     private void OnTriggerEnter(Collider other) {
-        if(other.gameObject.CompareTag("Player"))
+        if(other.gameObject.CompareTag("Player") && !teleporting)
         {
+            teleporting = true;
+            GameObject particles = Instantiate(teleportParticles, other.transform.position, Quaternion.Euler(90, 0, 0));
+            particles.transform.parent = other.transform;
+            Invoke("TeleportAudio", 0.25f);
             FindObjectOfType<LevelManager>().LevelBeat();
         }
+    }
+
+    void TeleportAudio()
+    {
+        AudioSource.PlayClipAtPoint(teleportSFX, Camera.main.transform.position);
     }
 }

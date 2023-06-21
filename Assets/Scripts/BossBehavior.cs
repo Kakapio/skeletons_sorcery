@@ -50,7 +50,6 @@ public class BossBehavior : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         meshCollider = GetComponent<MeshCollider>();
-        agent.speed = chaseSpeed;
         playerTransform = GameObject.FindWithTag("Player").transform;
         healthbar.SetActive(false);
         healthSlider = healthbar.GetComponentInChildren<Slider>();
@@ -74,9 +73,10 @@ public class BossBehavior : MonoBehaviour
         switch (bossPhase)
         {
             case BossPhase.Melee:
-                anim.SetFloat("Speed_f", 0.7f);
+                anim.SetFloat("Speed_f", 0.3f);
                 FaceTarget(playerTransform.position);
                 agent.SetDestination(playerTransform.position);
+                agent.speed = chaseSpeed;
                 
                 if(distanceToPlayer < attackRange)
                 {
@@ -223,7 +223,7 @@ public class BossBehavior : MonoBehaviour
             anim.SetInteger("DeathType_int", 1);
             anim.SetBool("Death_b", true);
 
-            //AudioSource.PlayClipAtPoint(deathSFX, transform.position);
+            AudioSource.PlayClipAtPoint(deathSFX, transform.position);
 
             FindObjectOfType<LevelManager>().LevelBeat();
         }

@@ -186,6 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lootDrop: VampireSoul
   lootDropSprite: {fileID: 21300000, guid: 32994a932bb0018498d23d28b59715cd, type: 3}
+  pickupSFX: {fileID: 8300000, guid: 7a3d0acce818b5f4f8f203b17e7ee26b, type: 3}
 --- !u!64 &7552822232472182593
 MeshCollider:
   m_ObjectHideFlags: 0

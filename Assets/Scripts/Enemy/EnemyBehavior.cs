@@ -257,7 +257,7 @@ public class EnemyBehavior : MonoBehaviour
 
     void CheckAttackHit()
     {
-        if(distanceToPlayer < attackRange + 1)
+        if(distanceToPlayer < attackRange + 1 && !PortalBehavior.teleporting)
         {
             // apply damage
             var playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
@@ -280,13 +280,6 @@ public class EnemyBehavior : MonoBehaviour
     public void Dead()
     {
         currentState = EnemyStates.Dead;
-    }
-
-    public void DeadByFire()
-    {
-        //update death by fire effect to dissolve enemy using dissolve material from unity fx pack
-        //for now just use usual death
-        Dead();
     }
 
     void FaceTarget(Vector3 target)

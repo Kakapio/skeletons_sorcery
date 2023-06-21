@@ -103,6 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lootDrop: CuckooFeather
   lootDropSprite: {fileID: 21300000, guid: dd9a86d1597620d46ad5ad41136f69e5, type: 3}
+  pickupSFX: {fileID: 8300000, guid: 7a3d0acce818b5f4f8f203b17e7ee26b, type: 3}
 --- !u!23 &5909274220040967426
 MeshRenderer:
   m_ObjectHideFlags: 0

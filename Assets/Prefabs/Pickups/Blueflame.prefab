@@ -144,6 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lootDrop: Blueflame
   lootDropSprite: {fileID: 21300000, guid: 7b2e51af6de0e72418d1ffc902d6724c, type: 3}
+  pickupSFX: {fileID: 8300000, guid: 7a3d0acce818b5f4f8f203b17e7ee26b, type: 3}
 --- !u!1 &8213280040587695640
 GameObject:
   m_ObjectHideFlags: 0

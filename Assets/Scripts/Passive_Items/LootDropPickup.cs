@@ -8,6 +8,7 @@ public class LootDropPickup : MonoBehaviour
 {
     public string lootDrop;
     public Sprite lootDropSprite;
+    public AudioClip pickupSFX;
 
     private bool pickedUp = false;
 
@@ -44,6 +45,7 @@ public class LootDropPickup : MonoBehaviour
             playerItems.GiveItem(lootDropData);
             FindObjectOfType<LevelManager>().UpdateScore(2, "Loot Picked Up");
             FindObjectOfType<LootCount>().UpdateLootCounts();
+            AudioSource.PlayClipAtPoint(pickupSFX, Camera.main.transform.position);
 
             Debug.Log($"Gave player {lootDrop} powers");
             

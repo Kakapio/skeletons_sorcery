@@ -18,12 +18,11 @@ public class LevelManager : MonoBehaviour
     public TMP_Text timerText;
     public GameObject scoreInfoPrefab;
 
-    //public AudioClip gameOverSFX;
-    //public AudioClip gameWonSFX;
+    public AudioClip gameOverSFX;
+    public AudioClip gameWonSFX;
 
     public string nextLevel;
 
-    //public static bool isGameOver = false;
     public static float timer = 0f;
     public static int score = 0;
 
@@ -43,6 +42,7 @@ public class LevelManager : MonoBehaviour
         scoreInfoParent = GameObject.FindGameObjectWithTag("ScoreInfoParent");
         Time.timeScale = 1f;
         savedScore = score;
+        PortalBehavior.teleporting = false;
     }
 
     // Update is called once per frame
@@ -138,13 +138,12 @@ public class LevelManager : MonoBehaviour
         else
         {
             UpdateGameInfo("You died... respawning", Color.red);
-            Invoke("LoadCurrentLevel", 2);
+            Invoke("LoadCurrentLevel", 1.5f);
         }
 
         gameText.gameObject.SetActive(true);
 
-        //Camera.main.GetComponent<AudioSource>().pitch = 1;
-        //AudioSource.PlayClipAtPoint(gameOverSFX, Camera.main.transform.position);
+        AudioSource.PlayClipAtPoint(gameOverSFX, Camera.main.transform.position);
     }
 
     public void LevelBeat()
@@ -152,16 +151,17 @@ public class LevelManager : MonoBehaviour
         UpdateGameInfo("Teleporting...", Color.cyan);
 
         PlayerHealth.storedHealth = PlayerHealth.currentHealth;
-        //Camera.main.GetComponent<AudioSource>().pitch = 2;
-        //AudioSource.PlayClipAtPoint(gameWonSFX, Camera.main.transform.position);
 
         if(!string.IsNullOrEmpty(nextLevel))
         {
-            Invoke("LoadNextLevel", 1);
+            Invoke("LoadNextLevel", 2);
         }
         else
         {
             UpdateGameInfo("YOU WIN!\nScore: " + score + "\tTime: " + ConvertTime(timer), Color.white, 5f);
+
+            Camera.main.GetComponent<AudioSource>().volume = 0;
+            AudioSource.PlayClipAtPoint(gameWonSFX, Camera.main.transform.position);
 
             if(score > PlayerPrefs.GetInt("highScore", -1))
             {
