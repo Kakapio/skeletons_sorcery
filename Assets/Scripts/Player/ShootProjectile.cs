@@ -56,12 +56,17 @@ public class ShootProjectile : MonoBehaviour
         venomBombSlider.SetActive(false);
         venomBombSlider.GetComponentInChildren<Slider>().maxValue = venomBombCooldown;
         venomBombTimer = venomBombCooldown;
+
+        if(FindObjectOfType<PlayerItems>().HasItem("Blueflame"))
+        {
+            fireballPrefab = bluefireballPrefab;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!PauseMenuBehavior.isGamePaused)
+        if(!PauseMenuBehavior.isGamePaused && !PlayerHealth.isPlayerDead)
         {
             PollWeaponSwap();
             HandleShoot();

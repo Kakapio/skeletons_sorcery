@@ -32,6 +32,7 @@ public class BossBehavior : MonoBehaviour
     public AudioClip deathSFX;
     public int currentHealth = 1000;
     public GameObject healthbar;
+    public static bool isDead = false;
 
     private BossPhase bossPhase = BossPhase.Summon;
     private NavMeshAgent agent;
@@ -42,10 +43,10 @@ public class BossBehavior : MonoBehaviour
     private bool bossActive = false;
     private Slider healthSlider;
     private MeshCollider meshCollider;
-    private bool isDead = false;
     
     void Start()
     {
+        isDead = false;
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         meshCollider = GetComponent<MeshCollider>();

@@ -5772,6 +5772,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chest (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5097752772847414175, guid: 9daa78676477d724daf40757e9d42a52, type: 3}
+      propertyPath: possibleLoot.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5097752772847414175, guid: 9daa78676477d724daf40757e9d42a52, type: 3}
+      propertyPath: possibleLoot.Array.data[1]
+      value: 
+      objectReference: {fileID: 6134308729960725786, guid: ae91a69a344967f429bb607b41639598, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9daa78676477d724daf40757e9d42a52, type: 3}
 --- !u!4 &1381141329 stripped
@@ -8887,6 +8895,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5063701280170783570, guid: 9812c7c059712424eb66b6cd829ff7e8, type: 3}
+      propertyPath: possibleLoot.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063701280170783570, guid: 9812c7c059712424eb66b6cd829ff7e8, type: 3}
+      propertyPath: possibleLoot.Array.data[1]
+      value: 
+      objectReference: {fileID: 6134308729960725786, guid: ae91a69a344967f429bb607b41639598, type: 3}
     - target: {fileID: 5147739102652672712, guid: 9812c7c059712424eb66b6cd829ff7e8, type: 3}
       propertyPath: m_RootOrder
       value: 8

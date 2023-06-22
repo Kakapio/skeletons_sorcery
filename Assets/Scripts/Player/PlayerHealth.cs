@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(PlayerPrefs.GetInt("difficulty", 0) == 0)
+        if(PlayerPrefs.GetInt("difficulty", 0) == 0 || SceneManager.GetActiveScene().name == "Stage0")
         {
             currentHealth = maxHealth;
         }
@@ -35,7 +36,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void Damage(int damageAmount)
     {
-        if(!isPlayerDead)
+        if(!isPlayerDead && !BossBehavior.isDead)
         {
             if(currentHealth > 0)
             {

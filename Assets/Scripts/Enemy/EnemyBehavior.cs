@@ -56,6 +56,7 @@ public class EnemyBehavior : MonoBehaviour
         startPos = transform.position;
         agent = GetComponent<NavMeshAgent>();
         agent.stoppingDistance = attackRange;
+        agent.autoTraverseOffMeshLink = false;
     }
 
     // Update is called once per frame
@@ -180,7 +181,7 @@ public class EnemyBehavior : MonoBehaviour
         {
             ApplyVampireHeal();
             FindObjectOfType<LevelManager>().UpdateScore(deathScore, "Enemy Killed");
-            //GetComponentInChildren<MeshCollider>().enabled = false;
+            GetComponentInChildren<MeshCollider>().enabled = false;
 
             isDead = true;
             agent.SetDestination(transform.position);
