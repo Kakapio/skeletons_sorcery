@@ -15,9 +15,7 @@ public class VenomMagic : MonoBehaviour
     
     private Transform targetEnemy;
     private float rotateSpeed = 2f;
-    private bool alreadyHit = false;
     
-    // Start is called before the first frame update
     void Start()
     {
         AudioSource.PlayClipAtPoint(castSFX, transform.position, 0.5f);
@@ -42,13 +40,13 @@ public class VenomMagic : MonoBehaviour
     void Update()
     {
         var step = speed * Time.deltaTime;
-        if (Vector3.Distance(transform.position, targetEnemy.position) <= activateDistance)
+        if (Vector3.Distance(transform.position, targetEnemy.position + new Vector3(0, 2, 0)) <= activateDistance)
         {
             Invoke("Explode", detonateTime);
         }
         
         FaceTarget(targetEnemy.position);
-        transform.position = Vector3.MoveTowards(transform.position, targetEnemy.position, step);
+        transform.position = Vector3.MoveTowards(transform.position, targetEnemy.position + new Vector3(0, 2, 0), step);
     }
     
     void Explode()
@@ -84,10 +82,9 @@ public class VenomMagic : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log($"Registered hit with {other.name}");
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Gate"))
             return;
 
-        alreadyHit = true;
         Explode();
     }
 }

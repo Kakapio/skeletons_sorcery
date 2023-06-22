@@ -2,24 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireballMagic : MonoBehaviour
+public class MagicAttack : MonoBehaviour
 {
     public float destroyDuration = 3;
-    public AudioClip burnUpSFX;
+    public AudioClip launchSFX;
     public AudioClip impactSFX;
     public GameObject explosionFX;
+    public string magicID;
     
     private bool alreadyHit = false;
 
     void Start()
     {
-        AudioSource.PlayClipAtPoint(burnUpSFX, transform.position, 0.2f);
+        AudioSource.PlayClipAtPoint(launchSFX, transform.position, 0.2f);
         Destroy(gameObject, destroyDuration);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,12 +27,12 @@ public class FireballMagic : MonoBehaviour
         
         if (other.gameObject.CompareTag("Enemy"))
         {
-            other.GetComponent<EnemyHealth>().TakeDamage(LevelManager.fireballDamage);
+            other.GetComponent<EnemyHealth>().TakeDamage(FindObjectOfType<LevelManager>().GetDamage(magicID));
             other.GetComponent<EnemyBehavior>().Alert();
         }
         if (other.gameObject.CompareTag("Boss"))
         {
-            other.GetComponent<BossBehavior>().DealDamage(LevelManager.fireballDamage);
+            other.GetComponent<BossBehavior>().DealDamage(FindObjectOfType<LevelManager>().GetDamage(magicID));
         }
 
         GameObject explosion = Instantiate(explosionFX, transform.position, transform.rotation);

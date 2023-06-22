@@ -83593,7 +83593,7 @@ GameObject:
   - component: {fileID: 5272347080320560452}
   - component: {fileID: 1247829087793220669}
   - component: {fileID: 8305634780205690669}
-  - component: {fileID: 622112390739442734}
+  - component: {fileID: 5570144280979732739}
   m_Layer: 0
   m_Name: Icespear
   m_TagString: Fireball
@@ -83647,7 +83647,7 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &622112390739442734
+--- !u!114 &5570144280979732739
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -83656,10 +83656,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4783090058030970878}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e85b088837463b94f88ce46737048720, type: 3}
+  m_Script: {fileID: 11500000, guid: 0be6622bc78c77548aab81b284fe3e24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   destroyDuration: 3
   launchSFX: {fileID: 8300000, guid: c63d70920d962314db7dc6d5c99e53a7, type: 3}
   impactSFX: {fileID: 8300000, guid: 3905acaf989822148a9de34efce64d65, type: 3}
-  iceexplosionFX: {fileID: 1098398252141382567, guid: dabcd94ee0ce72746b175217593ee78c, type: 3}
+  explosionFX: {fileID: 1098398252141382567, guid: dabcd94ee0ce72746b175217593ee78c, type: 3}
+  magicID: icespear

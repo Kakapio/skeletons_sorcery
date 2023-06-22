@@ -42,9 +42,8 @@ public class BossBehavior : MonoBehaviour
     private bool bossActive = false;
     private Slider healthSlider;
     private MeshCollider meshCollider;
-    bool isDead = false;
+    private bool isDead = false;
     
-    // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -82,7 +81,7 @@ public class BossBehavior : MonoBehaviour
                 }
                 break;
             case BossPhase.Summon:
-                PlaySummonAudio();
+                AudioSource.PlayClipAtPoint(summonSFX, transform.position);
                     for (int i = 0; i < summonLocations.Length; i++)
                     {
                         Debug.Log($"Summoning enemy {i}...");
@@ -134,10 +133,6 @@ public class BossBehavior : MonoBehaviour
         Instantiate(skullAttack, spawnPosition, Quaternion.identity);
         Instantiate(skullAttack, new Vector3(spawnPosition.x * -1, spawnPosition.y, spawnPosition.z), Quaternion.identity);
         Debug.Log("Boss is doing ranged skull attack.");
-    }
-
-    private void PlaySummonAudio()
-    {
     }
 
     private void CheckBossActivation()
@@ -219,6 +214,6 @@ public class BossBehavior : MonoBehaviour
         {
             Dead();
         }
-        healthbar.GetComponent<Slider>().value = currentHealth;
+        healthSlider.value = currentHealth;
     }
 }

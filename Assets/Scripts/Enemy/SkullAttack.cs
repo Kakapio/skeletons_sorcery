@@ -19,7 +19,6 @@ public class SkullAttack : MonoBehaviour
     private Vector3 storedPlayerPos;
     private bool hasLockedOn;
     
-    // Start is called before the first frame update
     void Start()
     {
         playerTransform = GameObject.FindWithTag("Player").transform;
@@ -77,9 +76,7 @@ public class SkullAttack : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<BlueflameMagic>() != null ||
-            other.gameObject.GetComponent<FireballMagic>() != null ||
-            other.gameObject.GetComponent<IcespearMagic>() != null)
+        if (other.gameObject.GetComponent<MagicAttack>() != null)
             Explode();
     }
 }

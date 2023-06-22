@@ -18346,7 +18346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7972080661055504573, guid: 41de25c35c9e5fe4682414f66d7a2853, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.22
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 7972080661055504573, guid: 41de25c35c9e5fe4682414f66d7a2853, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22327,7 +22327,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7972080661055504573, guid: 41de25c35c9e5fe4682414f66d7a2853, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.22
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 7972080661055504573, guid: 41de25c35c9e5fe4682414f66d7a2853, type: 3}
       propertyPath: m_LocalPosition.z
@@ -82689,6 +82689,18 @@ PrefabInstance:
     - target: {fileID: 1892085161, guid: 5700737d6540f6e4da27972ec8ff7232, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919764689081916386, guid: 5700737d6540f6e4da27972ec8ff7232, type: 3}
+      propertyPath: damageAmount
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919764689081916386, guid: 5700737d6540f6e4da27972ec8ff7232, type: 3}
+      propertyPath: currentHealth
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919764689081916386, guid: 5700737d6540f6e4da27972ec8ff7232, type: 3}
+      propertyPath: bossRotationSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5377713716875242166, guid: 5700737d6540f6e4da27972ec8ff7232, type: 3}
       propertyPath: m_Name

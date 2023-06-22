@@ -7,11 +7,10 @@ public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 100;
     public Slider healthSlider;
-
     public static bool isPlayerDead;
-
     public static int currentHealth;
     public static int storedHealth = 100;
+
     Animator anim;
 
     // Start is called before the first frame update
@@ -63,7 +62,6 @@ public class PlayerHealth : MonoBehaviour
 
     void PlayerDies()
     {
-        //AudioSource.PlayClipAtPoint(deadSFX, transform.position);
         isPlayerDead = true;
         currentHealth = storedHealth;
         anim.SetInteger("Dead", Random.Range(1,3));

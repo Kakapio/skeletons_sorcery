@@ -40,6 +40,7 @@ public class LevelManager : MonoBehaviour
         gameInfo.SetActive(false);
         SetStartText();
         SetTimerText();
+        
         scoreInfoParent = GameObject.FindGameObjectWithTag("ScoreInfoParent");
         Time.timeScale = 1f;
         savedScore = score;
@@ -183,6 +184,24 @@ public class LevelManager : MonoBehaviour
         gameText.text = text;
         gameText.color = color;
         gameTextTimer = duration;
+    }
+
+    public int GetDamage(string magicAttack)
+    {
+        switch(magicAttack.ToLower())
+        {
+            case "fireball":
+                return fireballDamage;
+            case "bluefireball":
+                return blueFireballDamage;
+            case "icespear":
+                return iceSpearDamage;
+            case "venombomb":
+                return venomBombDamage;
+            default:
+                return 0;
+        }
+        
     }
 
     void LoadNextLevel()
