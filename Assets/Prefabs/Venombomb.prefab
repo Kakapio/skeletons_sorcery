@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8227868112983191318}
   - component: {fileID: 8227868112983191319}
   - component: {fileID: 8227868112983191323}
+  - component: {fileID: 1497644939909888080}
   m_Layer: 0
   m_Name: Venombomb
   m_TagString: Untagged
@@ -118,6 +119,22 @@ MonoBehaviour:
   explodeFX: {fileID: 1098398252141382567, guid: b62b3034e2ea4fa44bac0c1ae81fcefe, type: 3}
   castSFX: {fileID: 8300000, guid: 5c0190cb26aac19458f8d9cb6a1a6416, type: 3}
   impactSFX: {fileID: 8300000, guid: e2ab5bd28a783c94e9ab2e54de86da85, type: 3}
+--- !u!54 &1497644939909888080
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8227868112983191312}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 2
 --- !u!1001 &3140926396356636219
 PrefabInstance:
   m_ObjectHideFlags: 0
