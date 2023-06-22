@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -72,5 +73,13 @@ public class SkullAttack : MonoBehaviour
     void BoneAudio()
     {
         AudioSource.PlayClipAtPoint(boneSFX, transform.position, 1f);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<BlueflameMagic>() != null ||
+            other.gameObject.GetComponent<FireballMagic>() != null ||
+            other.gameObject.GetComponent<IcespearMagic>() != null)
+            Explode();
     }
 }

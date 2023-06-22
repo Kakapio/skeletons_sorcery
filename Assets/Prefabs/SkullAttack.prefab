@@ -15084,6 +15084,7 @@ GameObject:
   - component: {fileID: 9029983398735310512}
   - component: {fileID: 603137256643363420}
   - component: {fileID: 3038361061627263118}
+  - component: {fileID: 1739041626865200174}
   m_Layer: 0
   m_Name: SkullAttack
   m_TagString: Untagged
@@ -15151,3 +15152,16 @@ MonoBehaviour:
   damage: 5
   explodeSFX: {fileID: 8300000, guid: 456da0a3e52de8848aeb979b5d3ef483, type: 3}
   boneSFX: {fileID: 8300000, guid: bcebecaf06aea4e499fcd56195ce3ad0, type: 3}
+--- !u!135 &1739041626865200174
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8510434001972540426}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.03
+  m_Center: {x: 0, y: 1.35, z: 0}

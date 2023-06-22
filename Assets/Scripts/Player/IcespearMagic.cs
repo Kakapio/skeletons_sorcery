@@ -39,11 +39,6 @@ public class IcespearMagic : MonoBehaviour
             other.GetComponent<BossBehavior>().DealDamage(LevelManager.iceSpearDamage);
         }
 
-        if(other.gameObject.CompareTag("Boss"))
-        {
-            other.GetComponent<BossBehavior>().TakeDamage(LevelManager.iceSpearDamage);
-        }
-
         GameObject explosion = Instantiate(iceexplosionFX, transform.position, transform.rotation);
         Destroy(explosion, 2f);
         
