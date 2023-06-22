@@ -34,10 +34,9 @@ public class IcespearMagic : MonoBehaviour
             other.GetComponent<EnemyHealth>().TakeDamage(LevelManager.iceSpearDamage);
             other.GetComponent<EnemyBehavior>().Alert();
         }
-
-        if(other.gameObject.CompareTag("Boss"))
+        if (other.gameObject.CompareTag("Boss"))
         {
-            other.GetComponent<BossBehavior>().TakeDamage(LevelManager.iceSpearDamage);
+            other.GetComponent<BossBehavior>().DealDamage(LevelManager.iceSpearDamage);
         }
 
         GameObject explosion = Instantiate(iceexplosionFX, transform.position, transform.rotation);

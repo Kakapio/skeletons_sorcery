@@ -891,7 +891,7 @@ MonoBehaviour:
   fireballPrefab: {fileID: 8680271039583177988, guid: 5792ff608e9659242965be2c85e0c7ca, type: 3}
   bluefireballPrefab: {fileID: 8680271039583177988, guid: 9a8b5c773c6e37e42901942e48af417b, type: 3}
   icespearPrefab: {fileID: 4783090058030970878, guid: 65ae0a06b26a26b4ea4d1376f1c744f4, type: 3}
-  venomBombPrefab: {fileID: 8680271039583177988, guid: 9a8b5c773c6e37e42901942e48af417b, type: 3}
+  venomBombPrefab: {fileID: 8227868112983191312, guid: 1355d40a941c2af48b683607da13c92a, type: 3}
   projectileSpeed: 50
   projectileSFX: {fileID: 8300000, guid: b0c2d442ba6c1164f8cce5f73fd42fac, type: 3}
   fireballCooldown: 0.7
@@ -6618,7 +6618,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3820882547389863834}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.238277, y: -0.21574461, z: 2.9144218}
+  m_LocalPosition: {x: 0.13839102, y: 0.5967616, z: 1.7244642}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7592,7 +7592,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6168608870569590095}
   m_LocalRotation: {x: -0.067800656, y: -0.81820226, z: -0.0986512, w: 0.5623311}
-  m_LocalPosition: {x: 3.238277, y: -0.21574461, z: 2.9144218}
+  m_LocalPosition: {x: 0.13839102, y: 0.5967616, z: 1.7244642}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

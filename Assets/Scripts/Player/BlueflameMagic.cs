@@ -34,10 +34,9 @@ public class BlueflameMagic : MonoBehaviour
             other.GetComponent<EnemyHealth>().TakeDamage(LevelManager.blueFireballDamage);
             other.GetComponent<EnemyBehavior>().Alert();
         }
-
-        if(other.gameObject.CompareTag("Boss"))
+        if (other.gameObject.CompareTag("Boss"))
         {
-            other.GetComponent<BossBehavior>().TakeDamage(LevelManager.blueFireballDamage);
+            other.GetComponent<BossBehavior>().DealDamage(LevelManager.blueFireballDamage);
         }
 
         GameObject explosion = Instantiate(explosionFX, transform.position, transform.rotation);

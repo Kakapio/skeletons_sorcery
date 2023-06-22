@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,10 @@ public class SkullAttack : MonoBehaviour
     public float speed = 30f;
     public float detonateTime = 1f;
     public GameObject explodeFX;
+    public float range = 4f;
+    public int damage = 5;
+    public AudioClip explodeSFX;
+    public AudioClip boneSFX;
     
     private Transform playerTransform;
     private float rotateSpeed = 2f;
@@ -18,6 +23,7 @@ public class SkullAttack : MonoBehaviour
     void Start()
     {
         playerTransform = GameObject.FindWithTag("Player").transform;
+        InvokeRepeating("BoneAudio", 5, 3);
     }
 
     // Update is called once per frame
@@ -40,6 +46,17 @@ public class SkullAttack : MonoBehaviour
 
     void Explode()
     {
+        var hits = Physics.OverlapSphere(transform.position, range);
+        foreach (var mob in hits)
+        {
+            Debug.Log("Hit a player...");
+            if (mob.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth))
+            {
+                playerHealth.Damage(damage);
+            }
+        }
+        
+        AudioSource.PlayClipAtPoint(explodeSFX, transform.position, 0.8f);
         Instantiate(explodeFX, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
@@ -51,5 +68,18 @@ public class SkullAttack : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(directionToTarget);
         transform.rotation = Quaternion.Slerp(
             transform.rotation, lookRotation, rotateSpeed * Time.deltaTime);
+    }
+
+    void BoneAudio()
+    {
+        AudioSource.PlayClipAtPoint(boneSFX, transform.position, 1f);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<BlueflameMagic>() != null ||
+            other.gameObject.GetComponent<FireballMagic>() != null ||
+            other.gameObject.GetComponent<IcespearMagic>() != null)
+            Explode();
     }
 }

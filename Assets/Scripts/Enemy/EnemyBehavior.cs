@@ -241,7 +241,7 @@ public class EnemyBehavior : MonoBehaviour
         {
             Debug.Log($"Player has {player.GetComponent<PlayerItems>().GetItem("VampireSoul").Count} vampire souls");
             var vampireItem = player.GetComponent<PlayerItems>().GetItem("VampireSoul");
-            player.GetComponent<PlayerHealth>().Heal(1 * vampireItem.Count);
+            player.GetComponent<PlayerHealth>().Heal(4 * vampireItem.Count);
         }
     }
 

@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
     public static int fireballDamage = 20;
     public static int blueFireballDamage = (int)(fireballDamage * 1.2f); // 20% more damage than base
     public static int iceSpearDamage = 40;
+    public static int venomBombDamage = 40;
     
     public GameObject gameInfo;
     public TMP_Text scoreText;
