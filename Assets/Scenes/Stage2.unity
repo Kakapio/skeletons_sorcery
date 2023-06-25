@@ -808,6 +808,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicPathSplit (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7637654350794355003, guid: c9cbda599bf9eba4fad445fda096ff6c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f7cd93f1b873db84fb25cb262ae4d26b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9cbda599bf9eba4fad445fda096ff6c, type: 3}
 --- !u!4 &203234345 stripped

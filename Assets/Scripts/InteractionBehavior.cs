@@ -11,30 +11,27 @@ public class InteractionBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!PlayerHealth.isPlayerDead)
-        {
-            RaycastHit hit;
+        RaycastHit hit;
 
-            if(Physics.Raycast(transform.position, transform.forward, out hit, reachDistance))
+        if(!PlayerHealth.isPlayerDead && Physics.Raycast(transform.position, transform.forward, out hit, reachDistance))
+        {
+            if(hit.collider.CompareTag("Chest"))
             {
-                if(hit.collider.CompareTag("Chest"))
+                chest = hit.collider.gameObject;
+                hit.collider.gameObject.GetComponent<ChestBehavior>().SetText();
+                if(Input.GetKeyDown(KeyCode.E))
                 {
-                    chest = hit.collider.gameObject;
-                    hit.collider.gameObject.GetComponent<ChestBehavior>().SetText();
-                    if(Input.GetKeyDown(KeyCode.E))
-                    {
-                        hit.collider.gameObject.GetComponent<ChestBehavior>().OpenChest();
-                    }
-                }
-                else
-                {
-                    RemoveChestText();
+                    hit.collider.gameObject.GetComponent<ChestBehavior>().OpenChest();
                 }
             }
             else
             {
                 RemoveChestText();
             }
+        }
+        else
+        {
+            RemoveChestText();
         }
     }
 
