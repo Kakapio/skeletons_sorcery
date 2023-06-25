@@ -26,10 +26,6 @@ public class MainMenu : MonoBehaviour
         UpdatePlayerInfo();
     }
 
-    private void Update() {
-        print(PlayerPrefs.GetInt("difficulty", -1));
-    }
-
     public void StartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
